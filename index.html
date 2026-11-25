@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -68,6 +68,8 @@ ul{padding:0;list-style:none}
 .btn--ghost:hover{background:rgba(255,255,255,.12)}
 .btn--navy{background:var(--navy)}
 .btn--navy:hover{background:#0E2E59}
+.btn--outline{background:#fff;border:1px solid #C9D8EA;color:var(--navy)}
+.btn--outline:hover{background:#F3F7FC;border-color:#AFC7E3}
 
 /* ---------- hero ---------- */
 .hero{position:relative;color:#fff;overflow:hidden;isolation:isolate;background:#0C2342}
@@ -84,6 +86,12 @@ ul{padding:0;list-style:none}
 .hero h1{font-size:clamp(30px,4.4vw,56px);line-height:1.07;font-weight:300;letter-spacing:-.8px;max-width:820px}
 .hero__lead{margin-top:22px;font-size:clamp(15px,1.35vw,18px);line-height:1.68;color:rgba(255,255,255,.84);max-width:640px}
 .hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero__chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.hero__chips span{
+  font-size:12.5px;line-height:1.2;color:rgba(255,255,255,.92);
+  border:1px solid rgba(255,255,255,.34);border-radius:100px;padding:8px 14px;
+  background:rgba(255,255,255,.07);backdrop-filter:blur(6px);
+}
 .hero__facts{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:54px;padding-top:26px;border-top:1px solid rgba(255,255,255,.18)}
 .hero__facts b{display:block;font-size:clamp(20px,2.1vw,28px);font-weight:700;letter-spacing:-.4px}
 .hero__facts span{display:block;margin-top:4px;font-size:12px;line-height:1.4;color:rgba(255,255,255,.78)}
@@ -236,6 +244,7 @@ details[open] summary::after{transform:rotate(-135deg)}
 .step__n{position:absolute;top:-17px;left:0;background:#fff;padding-right:8px;font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--blue)}
 .step h3{font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.35}
 .step p{font-size:12.5px;line-height:1.55;color:var(--muted);margin-top:8px}
+.journey__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
 
 /* ---------- cases ---------- */
 .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
@@ -253,11 +262,25 @@ details[open] summary::after{transform:rotate(-135deg)}
 .term li{position:relative;padding-left:16px;font-size:13.5px;line-height:1.6;color:var(--muted)}
 .term li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:rgba(0,137,250,.55)}
 
+/* ---------- check-ups ---------- */
+.checks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}
+.check{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:22px;padding:26px 24px;background:#fff;text-decoration:none;color:inherit;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.check:hover{border-color:#C6DBF2;box-shadow:0 22px 44px -32px rgba(21,57,107,.45);transform:translateY(-2px)}
+.check__name{font-size:16px;line-height:1.35;color:var(--navy);font-weight:700}
+.check p{font-size:13px;line-height:1.6;color:var(--muted);flex:1}
+.check .scen__link{margin-top:auto}
+
 /* ---------- inline cta ---------- */
 .inline-cta{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .inline-cta__in{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:26px 0}
 .inline-cta__t{font-size:16px;font-weight:700;color:var(--navy)}
 .inline-cta__s{margin-top:4px;font-size:13px;color:var(--muted)}
+
+/* ---------- mobile sticky cta ---------- */
+.mobile-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;grid-template-columns:1fr 1fr;box-shadow:0 -6px 24px rgba(9,28,52,.18)}
+.mobile-cta a{padding:15px 10px;text-align:center;font-size:13px;font-weight:700;letter-spacing:.02em;color:#fff;text-decoration:none}
+.mobile-cta .call{background:#3E9E45}
+.mobile-cta .rec{background:var(--blue)}
 
 /* ---------- contact ---------- */
 .contact{background:#fff;border-top:1px solid var(--line);padding:78px 0 74px}
@@ -299,6 +322,7 @@ details[open] summary::after{transform:rotate(-135deg)}
 }
 @media (max-width:1080px){
   .scen{grid-template-columns:repeat(2,1fr)}
+  .checks{grid-template-columns:repeat(2,1fr)}
   .feat{grid-template-columns:1fr}
   .journey{grid-template-columns:repeat(3,1fr)}
 }
@@ -326,6 +350,8 @@ details[open] summary::after{transform:rotate(-135deg)}
   .brand img{height:23px}
   .topbar__right{gap:10px}
   .topbar__right .btn{padding:11px 16px;font-size:12.5px}
+  body{padding-bottom:54px}
+  .mobile-cta{display:grid}
   .subnav{top:68px}
   .section{padding:58px 0}
   .egrid{grid-template-columns:repeat(2,1fr);gap:24px 14px}
@@ -336,6 +362,7 @@ details[open] summary::after{transform:rotate(-135deg)}
   .facts{grid-template-columns:1fr 1fr}
   .fact{padding:20px}
   .scen{grid-template-columns:1fr}
+  .checks{grid-template-columns:1fr}
   .feat__card{grid-template-columns:92px 1fr;gap:14px;padding:14px}
   .feat__photo{width:92px;height:118px}
   .team__item{flex:0 0 128px}
@@ -389,6 +416,12 @@ details[open] summary::after{transform:rotate(-135deg)}
     <nav class="crumbs" aria-label="Хлебные крошки"><a href="/">Главная</a> &nbsp;→&nbsp; О клинике</nav>
     <h1>Сложные операции и лечение рака в одном комплексе</h1>
     <p class="hero__lead">Робот da Vinci Xi, гибридные операционные с 3D-ангиографом и лаборатория 3-го уровня. Диагностика, операция, лекарственная и лучевая терапия, реабилитация проходят на одной территории — в клинике высоких технологий «Белоостров».</p>
+    <div class="hero__chips">
+      <span>Полный цикл в одном комплексе</span>
+      <span>7 профессоров в команде</span>
+      <span>ОМС, ДМС и платно</span>
+      <span>Скорая помощь круглосуточно</span>
+    </div>
     <div class="hero__actions">
       <a class="btn" href="#booking">Записаться на приём</a>
       <a class="btn btn--ghost" href="#journey">Как мы лечим</a>
@@ -405,6 +438,7 @@ details[open] summary::after{transform:rotate(-135deg)}
 <nav class="subnav" aria-label="Разделы страницы">
   <div class="container subnav__in">
     <a href="#directions">Направления</a>
+    <a href="#checkups">Чек-апы</a>
     <a href="#tech">Технологии</a>
     <a href="#experts">Эксперты</a>
     <a href="#journey">Как мы лечим</a>
@@ -456,8 +490,45 @@ details[open] summary::after{transform:rotate(-135deg)}
   </div>
 </section>
 
+<!-- ================= ЧЕК-АПЫ ================= -->
+<section class="section section--tint" id="checkups">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow reveal">Программы обследования</div>
+        <h2 class="h2 reveal">С чего начать, если жалоб много</h2>
+        <p class="lead reveal">В программу уже входят консультации специалистов, инструментальная и лабораторная диагностика. Результаты выдают на руки и разбирают с врачом.</p>
+      </div>
+      <a class="sec-head__link reveal" href="/directions/kompleksnye-programmy-obsledovaniya/">Все чек-апы →</a>
+    </div>
+
+    <div class="checks">
+      <a class="check reveal" href="/subdirections/chek-ap-zdorove-serdtsa-i-sosudov/">
+        <div class="check__name">Кардиологический чек-ап</div>
+        <p>Кардиолог, ЭКГ, ЭхоКГ, дуплексное сканирование сосудов и лабораторные анализы.</p>
+        <span class="scen__link">Подробнее →</span>
+      </a>
+      <a class="check reveal" href="/subdirections/chek-ap-zdorovyy-mozg-i-sosudy/">
+        <div class="check__name">Здоровый мозг и сосуды</div>
+        <p>Обследование сосудов головного мозга и факторов риска, которые развиваются без симптомов.</p>
+        <span class="scen__link">Подробнее →</span>
+      </a>
+      <a class="check reveal" href="/subdirections/chek-ap-zdorovaya-spina/">
+        <div class="check__name">Здоровая спина</div>
+        <p>Расширенное обследование позвоночника: ищем причину боли, а не снимаем симптом.</p>
+        <span class="scen__link">Подробнее →</span>
+      </a>
+      <a class="check reveal" href="/subdirections/chek-ap-kontrol-vesa/">
+        <div class="check__name">Контроль веса</div>
+        <p>Диагностика причин набора веса и медицинский план, а не очередная диета.</p>
+        <span class="scen__link">Подробнее →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= ПОЧЕМУ ================= -->
-<section class="section section--tint" id="why">
+<section class="section" id="why">
   <div class="container">
     <div class="eyebrow reveal">Почему здесь</div>
     <h2 class="h2 reveal">Что стоит за результатом</h2>
@@ -483,7 +554,7 @@ details[open] summary::after{transform:rotate(-135deg)}
 </section>
 
 <!-- ================= ТЕХНОЛОГИИ ================= -->
-<section class="section" id="tech">
+<section class="section section--tint" id="tech">
   <div class="container">
     <div class="sec-head">
       <div>
@@ -748,6 +819,11 @@ details[open] summary::after{transform:rotate(-135deg)}
         <p>Реабилитация и наблюдение в клинике, без перевода в другое учреждение.</p>
       </div>
     </div>
+
+    <div class="journey__cta reveal">
+      <a class="btn" href="#booking">Записаться на приём</a>
+      <a class="btn btn--outline" href="tel:+78127605632">Позвонить: +7 (812) 760-56-32</a>
+    </div>
   </div>
 </section>
 
@@ -858,7 +934,7 @@ details[open] summary::after{transform:rotate(-135deg)}
         <div class="contact__label">Позвонить</div>
         <a class="contact__tel" href="tel:+78127605632">+7 (812) 760-56-32</a>
         <a class="contact__tel contact__tel--sm" href="tel:+78126303003">+7 (812) 630-30-03</a>
-        <div class="contact__note">Ежедневно, круглосуточно</div>
+        <div class="contact__note">Скорая помощь выезжает круглосуточно</div>
       </div>
 
       <div class="contact__col reveal">
@@ -908,7 +984,7 @@ details[open] summary::after{transform:rotate(-135deg)}
         <ul>
           <li><a href="tel:+78127605632">+7 (812) 760-56-32</a></li>
           <li><a href="tel:+78126303003">+7 (812) 630-30-03</a></li>
-          <li>Ежедневно, круглосуточно</li>
+          <li>Скорая помощь — круглосуточно</li>
         </ul>
       </div>
     </div>
@@ -918,6 +994,11 @@ details[open] summary::after{transform:rotate(-135deg)}
     </div>
   </div>
 </footer>
+
+<div class="mobile-cta" aria-label="Быстрая запись">
+  <a class="call" href="tel:+78127605632">Позвонить</a>
+  <a class="rec" href="#booking">Записаться</a>
+</div>
 
 <script>
 (function(){
@@ -984,5 +1065,8 @@ details[open] summary::after{transform:rotate(-135deg)}
 </script>
 </body>
 </html>
+
+
+
 
 
