@@ -259,30 +259,18 @@ details[open] summary::after{transform:rotate(-135deg)}
 .inline-cta__t{font-size:16px;font-weight:700;color:var(--navy)}
 .inline-cta__s{margin-top:4px;font-size:13px;color:var(--muted)}
 
-/* ---------- contact band ---------- */
-#complex{padding-bottom:56px}
-.cta-band{
-  position:relative;isolation:isolate;overflow:hidden;color:#fff;
-  background:linear-gradient(118deg,#112E58 0%,#15396B 58%,#1B4A83 100%);
-  padding:66px 0 62px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.cta-band::before{
-  content:"";position:absolute;right:-180px;top:-220px;width:620px;height:620px;border-radius:50%;
-  background:radial-gradient(circle,rgba(0,137,250,.34),rgba(0,137,250,0) 62%);
-  z-index:-1;
-}
-.cta-band__in{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
-.cta-band__eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:700;margin-bottom:16px}
-.cta-band h2{font-size:clamp(26px,2.9vw,36px);font-weight:300;line-height:1.16;letter-spacing:-.5px;max-width:520px}
-.cta-band p{margin-top:18px;font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.68);max-width:470px}
-.cta-band__right{padding-left:54px;border-left:1px solid rgba(255,255,255,.16)}
-.cta-band__label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-bottom:14px}
-.cta-band__tel{display:block;font-size:clamp(24px,2.3vw,30px);font-weight:700;letter-spacing:-.5px;text-decoration:none;line-height:1.2}
-.cta-band__tel:hover{color:#9FD3FF}
-.cta-band__tel--small{font-size:18px;font-weight:400;opacity:.8;margin-top:4px}
-.cta-band__actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:28px}
-.cta-band__note{font-size:12px;color:rgba(255,255,255,.5);line-height:1.45}
+/* ---------- contact ---------- */
+.contact{background:#fff;border-top:1px solid var(--line);padding:78px 0 74px}
+.contact__head{max-width:720px}
+.contact__grid{display:grid;grid-template-columns:1.05fr .85fr 1.1fr;gap:46px;margin-top:48px}
+.contact__col{border-top:1px solid var(--line);padding-top:20px}
+.contact__label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:16px}
+.contact__tel{display:block;font-size:clamp(22px,2.1vw,28px);font-weight:700;color:var(--navy);text-decoration:none;letter-spacing:-.5px;line-height:1.2}
+.contact__tel:hover{color:var(--blue)}
+.contact__tel--sm{font-size:17px;font-weight:400;color:#33475E;margin-top:6px;letter-spacing:0}
+.contact__note{font-size:12.5px;color:#8294AA;margin-top:12px;line-height:1.5}
+.contact__addr{font-size:13.5px;line-height:1.6;color:#33475E;max-width:260px}
+.contact__col .btn{margin-top:2px}
 
 /* ---------- footer ---------- */
 .footer{background:#0E2646;color:#fff;margin-top:0;padding:52px 0 34px}
@@ -328,9 +316,8 @@ details[open] summary::after{transform:rotate(-135deg)}
   .tech{grid-template-columns:1fr}
   .infra{grid-template-columns:repeat(2,1fr)}
   .buildings{grid-template-columns:1fr}
-  .cta-band{padding:52px 0 48px}
-  .cta-band__in{grid-template-columns:1fr;gap:34px}
-  .cta-band__right{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-top:30px}
+  .contact{padding:56px 0 52px}
+  .contact__grid{grid-template-columns:1fr;gap:30px;margin-top:36px}
   .footer__grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:720px){
@@ -357,9 +344,9 @@ details[open] summary::after{transform:rotate(-135deg)}
   .experts__stats{display:grid;grid-template-columns:1fr 1fr;gap:20px 18px}
   .footer__grid{grid-template-columns:1fr}
   .footer{margin-top:0}
-  .cta-band{padding:44px 0 42px}
-  .cta-band__actions{gap:14px;width:100%}
-  .cta-band__actions .btn{width:100%}
+  .contact{padding:46px 0 42px}
+  .contact__grid{gap:26px}
+  .contact__col .btn{width:100%}
   .inline-cta__in{flex-direction:column;align-items:flex-start;gap:16px;padding:24px 0}
   .inline-cta__in .btn{width:100%}
   .btns-row{display:flex;gap:10px;flex-wrap:wrap}
@@ -857,21 +844,33 @@ details[open] summary::after{transform:rotate(-135deg)}
   </div>
 </section>
 
-<!-- ================= CONTACT BAND ================= -->
-<section class="cta-band" id="booking">
-  <div class="container cta-band__in">
-    <div class="cta-band__left reveal">
-      <div class="cta-band__eyebrow">Запись</div>
-      <h2>Записаться на приём</h2>
-      <p>Контакт-центр работает ежедневно: подберём специалиста, проверим условия по ОМС и ДМС, согласуем парковку и госпитализацию.</p>
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="booking">
+  <div class="container">
+    <div class="contact__head reveal">
+      <div class="eyebrow">Запись</div>
+      <h2 class="h2">Записаться на приём</h2>
+      <p class="lead">Контакт-центр работает ежедневно: подберём специалиста, проверим условия по ОМС и ДМС, согласуем парковку и госпитализацию.</p>
     </div>
-    <div class="cta-band__right reveal">
-      <div class="cta-band__label">Контакт-центр</div>
-      <a class="cta-band__tel" href="tel:+78127605632">+7 (812) 760-56-32</a>
-      <a class="cta-band__tel cta-band__tel--small" href="tel:+78126303003">+7 (812) 630-30-03</a>
-      <div class="cta-band__actions">
+
+    <div class="contact__grid">
+      <div class="contact__col reveal">
+        <div class="contact__label">Позвонить</div>
+        <a class="contact__tel" href="tel:+78127605632">+7 (812) 760-56-32</a>
+        <a class="contact__tel contact__tel--sm" href="tel:+78126303003">+7 (812) 630-30-03</a>
+        <div class="contact__note">Ежедневно, круглосуточно</div>
+      </div>
+
+      <div class="contact__col reveal">
+        <div class="contact__label">Записаться онлайн</div>
         <a class="btn" href="/">Онлайн-запись</a>
-        <span class="cta-band__note">или оставьте заявку — перезвоним</span>
+        <div class="contact__note">Или оставьте заявку — перезвоним</div>
+      </div>
+
+      <div class="contact__col reveal">
+        <div class="contact__label">Приехать</div>
+        <div class="contact__addr">188632, Ленинградская область, Всеволожский район, Юкковское поселение, территория «Клиника «Белоостров».</div>
+        <div class="contact__note">Парковка на территории — по заявке через контакт-центр</div>
       </div>
     </div>
   </div>
@@ -985,4 +984,5 @@ details[open] summary::after{transform:rotate(-135deg)}
 </script>
 </body>
 </html>
+
 
