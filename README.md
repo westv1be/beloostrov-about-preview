@@ -49,6 +49,28 @@ python -m http.server 8765 --bind 127.0.0.1
 4. **Ссылки на разделы.** `/directions/surgery/`, `/directions/onkologicheskaya-pomoshch/`, `/doctors/` — проверить на боевом сайте.
 5. **JSON-LD.** Добавить `employee` с 25 `Physician` после согласования степеней.
 
+## Публикация
+
+Прототип опубликован на GitHub Pages:
+
+**https://westv1be.github.io/beloostrov-about-preview/**
+
+Репозиторий: `westv1be/beloostrov-about-preview` (публичный — иначе бесплатный план не отдаёт Pages). На странице стоит `noindex`, в корне лежит `robots.txt` с запретом обхода: ссылка рабочая, но в поиск не попадает.
+
+Обновить страницу:
+
+```
+git add -A
+git commit -m "правки"
+git push
+```
+
+Сборка Pages занимает около минуты. Удалить публикацию целиком:
+
+```
+gh repo delete westv1be/beloostrov-about-preview --yes
+```
+
 ## Проверено
 
 - Десктоп 1440×900, мобильный 390×844: горизонтального скролла нет.
