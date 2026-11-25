@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -108,7 +108,7 @@ ul{padding:0;list-style:none}
 .subnav a.is-active{color:var(--navy);border-color:var(--blue)}
 
 /* ---------- sections ---------- */
-.section{padding:86px 0}
+.section{padding:70px 0}
 .section--tint{background:var(--bg)}
 .eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:16px}
 .h2{font-size:clamp(25px,3vw,38px);line-height:1.16;font-weight:300;letter-spacing:-.5px;color:var(--navy);max-width:840px}
@@ -282,6 +282,39 @@ details[open] summary::after{transform:rotate(-135deg)}
 .mobile-cta .call{background:#3E9E45}
 .mobile-cta .rec{background:var(--blue)}
 
+
+/* ---------- rails ---------- */
+.sec-head__right{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.rail-nav{display:flex;gap:8px}
+.rail-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:18px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .15s,border-color .15s,opacity .15s}
+.rail-btn:hover:not(:disabled){background:#F2F7FD;border-color:#B7CCE5}
+.rail-btn:disabled{opacity:.35;cursor:default}
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 14px;margin-top:30px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail--4>*{flex:0 0 25.2%;scroll-snap-align:start}
+.rail--3>*{flex:0 0 34.5%;scroll-snap-align:start}
+
+.dcard{display:flex;flex-direction:column;gap:8px;border:1px solid var(--line);border-radius:20px;padding:22px 20px;background:#fff;text-decoration:none;color:inherit;min-height:150px;transition:border-color .2s,box-shadow .2s,transform .2s}
+.dcard:hover{border-color:#C6DBF2;box-shadow:0 20px 40px -32px rgba(21,57,107,.45);transform:translateY(-2px)}
+.dcard h3{font-size:16px;line-height:1.3;color:var(--navy);font-weight:700}
+.dcard p{font-size:12.5px;line-height:1.5;color:var(--muted);flex:1}
+.dcard__go{font-size:11.5px;color:var(--blue);font-weight:700}
+
+.tcard{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff;min-height:180px;transition:border-color .2s,box-shadow .2s,transform .2s}
+.tcard:hover{border-color:#C6DBF2;box-shadow:0 20px 40px -32px rgba(21,57,107,.45);transform:translateY(-2px)}
+.tcard h3{margin:12px 0 8px;font-size:17px;line-height:1.3;color:var(--navy);font-weight:700}
+.tcard p{font-size:13px;line-height:1.55;color:var(--muted)}
+
+/* ---------- why3 ---------- */
+.why3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px}
+.why3__item{border-top:2px solid var(--blue);padding-top:18px}
+.why3__item b{display:block;margin-top:8px;font-size:16.5px;line-height:1.35;color:var(--navy)}
+.why3__item p{margin-top:8px;font-size:13px;line-height:1.55;color:var(--muted)}
+
+/* ---------- compact checks ---------- */
+.check h3{font-size:15.5px;line-height:1.3;color:var(--navy);font-weight:700}
+.check{padding:22px 20px;min-height:150px}
+
 /* ---------- contact ---------- */
 .contact{background:#fff;border-top:1px solid var(--line);padding:78px 0 74px}
 .contact__head{max-width:720px}
@@ -353,7 +386,7 @@ details[open] summary::after{transform:rotate(-135deg)}
   body{padding-bottom:54px}
   .mobile-cta{display:grid}
   .subnav{top:68px}
-  .section{padding:58px 0}
+  .section{padding:48px 0}
   .egrid{grid-template-columns:repeat(2,1fr);gap:24px 14px}
   .ecard__name{font-size:14px}
   .ecard__photo{border-radius:78px 0}
@@ -385,6 +418,16 @@ details[open] summary::after{transform:rotate(-135deg)}
   .ecard__name{font-size:13px}
   .ecard__deg{font-size:11px}
 }
+
+@media (max-width:1080px){
+  .rail--4>*{flex:0 0 calc((100% - 16px)/2)}
+  .rail--3>*{flex:0 0 calc((100% - 16px)/2)}
+  .why3{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .rail--4>*,.rail--3>*{flex:0 0 84%}
+  .rail-nav{display:none}
+}
 </style>
 </head>
 <body>
@@ -415,7 +458,7 @@ details[open] summary::after{transform:rotate(-135deg)}
   <div class="container hero__in">
     <nav class="crumbs" aria-label="Хлебные крошки"><a href="/">Главная</a> &nbsp;→&nbsp; О клинике</nav>
     <h1>Сложные операции и лечение рака в одном комплексе</h1>
-    <p class="hero__lead">Робот da Vinci Xi, гибридные операционные с 3D-ангиографом и лаборатория 3-го уровня. Диагностика, операция, лекарственная и лучевая терапия, реабилитация проходят на одной территории — в клинике высоких технологий «Белоостров».</p>
+    <p class="hero__lead">Робот da Vinci Xi, гибридные операционные и лаборатория 3-го уровня. Диагностика, лечение и восстановление — на одной территории.</p>
     <div class="hero__chips">
       <span>Полный цикл в одном комплексе</span>
       <span>7 профессоров в команде</span>
@@ -449,42 +492,64 @@ details[open] summary::after{transform:rotate(-135deg)}
 
 <main id="main">
 
+
 <!-- ================= НАПРАВЛЕНИЯ ================= -->
 <section class="section" id="directions">
   <div class="container">
     <div class="sec-head">
       <div>
-        <div class="eyebrow reveal">С чем к нам приходят</div>
-        <h2 class="h2 reveal">Четыре повода обратиться</h2>
-        <p class="lead reveal">Сложный диагноз, повторная операция, второй взгляд на снимки. Здесь есть диагностика, операционная и консилиум на одной территории.</p>
+        <div class="eyebrow reveal">Главные направления</div>
+        <h2 class="h2 reveal">С чем к нам приходят</h2>
       </div>
-      <a class="sec-head__link reveal" href="/directions/">Все направления →</a>
+      <div class="sec-head__right reveal">
+        <a class="sec-head__link" href="/directions/">Все направления →</a>
+        <div class="rail-nav" data-nav>
+          <button class="rail-btn" type="button" data-prev aria-label="Назад">‹</button>
+          <button class="rail-btn" type="button" data-next aria-label="Вперёд">›</button>
+        </div>
+      </div>
     </div>
 
-    <div class="scen">
-      <a class="scen__card reveal" href="/directions/onkologicheskaya-pomoshch/">
-        <div class="scen__tag">Онкология</div>
-        <h3>Рак: диагностика, консилиум, лечение</h3>
-        <p>Экспертная диагностика, онкологический консилиум, операция, химио- и радиотерапия в одном центре.</p>
-        <span class="scen__link">Как мы лечим рак →</span>
+    <div class="rail rail--4" data-rail>
+      <a class="dcard" href="/directions/onkologicheskaya-pomoshch/">
+        <h3>Онкология</h3>
+        <p>Если поставлен диагноз и нужен план лечения</p>
+        <span class="dcard__go">Подробнее →</span>
       </a>
-      <a class="scen__card reveal" href="/directions/surgery/">
-        <div class="scen__tag">Кардиохирургия</div>
-        <h3>Пластика клапана через разрез 3 см</h3>
-        <p>Операция на сердце на роботе da Vinci Xi: грудную клетку не вскрывают, восстановление короче.</p>
-        <span class="scen__link">Технология операции →</span>
+      <a class="dcard" href="/subdirections/kardiokhirurgiya/">
+        <h3>Кардиохирургия</h3>
+        <p>Если нужна операция на сердце</p>
+        <span class="dcard__go">Подробнее →</span>
       </a>
-      <a class="scen__card reveal" href="/directions/surgery/">
-        <div class="scen__tag">Нейрохирургия</div>
-        <h3>Сосуды и опухоли головного мозга</h3>
-        <p>Гибридные операционные с биплановым ангиографом: внутрисосудистые вмешательства в режиме 3D.</p>
-        <span class="scen__link">Хирургия клиники →</span>
+      <a class="dcard" href="/subdirections/neyrokhirurgiya_beloostrov/">
+        <h3>Нейрохирургия</h3>
+        <p>Если сосуды или опухоль головного мозга</p>
+        <span class="dcard__go">Подробнее →</span>
       </a>
-      <a class="scen__card reveal" href="/directions/reabilitatsiya/">
-        <div class="scen__tag">Травматология и ортопедия</div>
-        <h3>Суставы: вернуть движение</h3>
-        <p>Эндопротезирование, артроскопия и спортивная травма. Операция и реабилитация в одном комплексе.</p>
-        <span class="scen__link">Реабилитация →</span>
+      <a class="dcard" href="/subdirections/travmatologiya-i-ortopediya-adults/">
+        <h3>Травматология</h3>
+        <p>Если болит сустав или нужна операция</p>
+        <span class="dcard__go">Подробнее →</span>
+      </a>
+      <a class="dcard" href="/subdirections/urologiya/">
+        <h3>Урология</h3>
+        <p>Если урологическая проблема</p>
+        <span class="dcard__go">Подробнее →</span>
+      </a>
+      <a class="dcard" href="/subdirections/ginekologiya/">
+        <h3>Гинекология</h3>
+        <p>Если женское здоровье</p>
+        <span class="dcard__go">Подробнее →</span>
+      </a>
+      <a class="dcard" href="/subdirections/otorinolaringologiya_adult/">
+        <h3>Оториноларингология</h3>
+        <p>Если нос, горло или слух</p>
+        <span class="dcard__go">Подробнее →</span>
+      </a>
+      <a class="dcard" href="/directions/diagnostics/">
+        <h3>Диагностика</h3>
+        <p>Если нужны КТ, МРТ или анализы</p>
+        <span class="dcard__go">Подробнее →</span>
       </a>
     </div>
   </div>
@@ -497,30 +562,29 @@ details[open] summary::after{transform:rotate(-135deg)}
       <div>
         <div class="eyebrow reveal">Программы обследования</div>
         <h2 class="h2 reveal">С чего начать, если жалоб много</h2>
-        <p class="lead reveal">В программу уже входят консультации специалистов, инструментальная и лабораторная диагностика. Результаты выдают на руки и разбирают с врачом.</p>
       </div>
       <a class="sec-head__link reveal" href="/directions/kompleksnye-programmy-obsledovaniya/">Все чек-апы →</a>
     </div>
 
     <div class="checks">
       <a class="check reveal" href="/subdirections/chek-ap-zdorove-serdtsa-i-sosudov/">
-        <div class="check__name">Кардиологический чек-ап</div>
-        <p>Кардиолог, ЭКГ, ЭхоКГ, дуплексное сканирование сосудов и лабораторные анализы.</p>
+        <h3>Кардиологический</h3>
+        <p>ЭКГ, ЭхоКГ, дуплекс и анализы</p>
         <span class="scen__link">Подробнее →</span>
       </a>
       <a class="check reveal" href="/subdirections/chek-ap-zdorovyy-mozg-i-sosudy/">
-        <div class="check__name">Здоровый мозг и сосуды</div>
-        <p>Обследование сосудов головного мозга и факторов риска, которые развиваются без симптомов.</p>
+        <h3>Мозг и сосуды</h3>
+        <p>Сосуды мозга и факторы риска</p>
         <span class="scen__link">Подробнее →</span>
       </a>
       <a class="check reveal" href="/subdirections/chek-ap-zdorovaya-spina/">
-        <div class="check__name">Здоровая спина</div>
-        <p>Расширенное обследование позвоночника: ищем причину боли, а не снимаем симптом.</p>
+        <h3>Здоровая спина</h3>
+        <p>Причина боли, а не симптом</p>
         <span class="scen__link">Подробнее →</span>
       </a>
       <a class="check reveal" href="/subdirections/chek-ap-kontrol-vesa/">
-        <div class="check__name">Контроль веса</div>
-        <p>Диагностика причин набора веса и медицинский план, а не очередная диета.</p>
+        <h3>Контроль веса</h3>
+        <p>Диагностика причин набора веса</p>
         <span class="scen__link">Подробнее →</span>
       </a>
     </div>
@@ -531,23 +595,23 @@ details[open] summary::after{transform:rotate(-135deg)}
 <section class="section" id="why">
   <div class="container">
     <div class="eyebrow reveal">Почему здесь</div>
-    <h2 class="h2 reveal">Что стоит за результатом</h2>
+    <h2 class="h2 reveal">Три причины ехать сюда</h2>
 
-    <div class="why">
-      <div class="why__row reveal">
+    <div class="why3">
+      <div class="why3__item reveal">
         <div class="why__n">01</div>
-        <h3>Решение принимает команда</h3>
-        <p>Сложные случаи разбирают на консилиумах: хирург, онколог, радиолог, анестезиолог и диагност видят одну картину. В клинике работают 25 ведущих экспертов по направлениям, среди них семь профессоров и одиннадцать докторов медицинских наук.</p>
+        <b>Команда, а не один врач</b>
+        <p>Сложные случаи разбирает консилиум профильных экспертов.</p>
       </div>
-      <div class="why__row reveal">
+      <div class="why3__item reveal">
         <div class="why__n">02</div>
-        <h3>Весь путь внутри одного комплекса</h3>
-        <p>Три корпуса на 30,5 га: диагностика, 14 операционных в центральном оперблоке, стационар на 420 коек, лаборатория 3-го уровня, реабилитация. Исследования выполняют на месте, пациента не перевозят между учреждениями.</p>
+        <b>Всё в одном комплексе</b>
+        <p>Диагностика, операция, терапия и реабилитация на одной территории.</p>
       </div>
-      <div class="why__row reveal">
+      <div class="why3__item reveal">
         <div class="why__n">03</div>
-        <h3>Робот da Vinci Xi и гибридные операционные</h3>
-        <p>Первую в Петербурге робот-ассистированную пластику митрального клапана выполнили здесь. Биплановый ангиограф даёт 3D-картинку сосудов прямо в операционной, ICG-навигация подсвечивает границы опухоли во время вмешательства.</p>
+        <b>da Vinci Xi и гибридные операционные</b>
+        <p>Разрез 3 см вместо стернотомии, сосуды в 3D прямо в операционной.</p>
       </div>
     </div>
   </div>
@@ -559,61 +623,48 @@ details[open] summary::after{transform:rotate(-135deg)}
     <div class="sec-head">
       <div>
         <div class="eyebrow reveal">Технологии</div>
-        <h2 class="h2 reveal">Шесть технологий и результат, который они дают</h2>
-        <p class="lead reveal">Меньше травмы, точнее удаление, быстрее диагноз. У каждой технологии ниже — понятный эффект для пациента.</p>
+        <h2 class="h2 reveal">Что это даёт пациенту</h2>
       </div>
-      <a class="sec-head__link reveal" href="/directions/surgery/">Хирургия клиники →</a>
+      <div class="sec-head__right reveal">
+        <a class="sec-head__link" href="/directions/surgery/">Хирургия клиники →</a>
+        <div class="rail-nav" data-nav>
+          <button class="rail-btn" type="button" data-prev aria-label="Назад">‹</button>
+          <button class="rail-btn" type="button" data-next aria-label="Вперёд">›</button>
+        </div>
+      </div>
     </div>
 
-    <div class="tech">
-      <article class="tech__card reveal">
-        <div class="tech__top"><span class="tech__num">01</span><span class="tech__tag">Роботическая хирургия</span></div>
-        <h3>Пластика клапана через разрез 3 см</h3>
-        <p>Робот da Vinci Xi повторяет движения рук хирурга с большей аккуратностью и работает в труднодоступных местах. Грудную клетку не вскрывают, клапан сохраняют свой. Первый такой случай в Петербурге выполнили здесь, в 2026 году.</p>
-        <div class="chips-inline"><span>Кардиохирургия</span><span>Клапаны сердца</span></div>
+    <div class="rail rail--3" data-rail>
+      <article class="tcard">
+        <div class="tech__top"><span class="tech__num">01</span><span class="tech__tag">Кардиохирургия</span></div>
+        <h3>Пластика клапана через 3 см</h3>
+        <p>Робот da Vinci Xi, без рассечения грудины. Первый такой случай в Петербурге.</p>
       </article>
-
-      <article class="tech__card reveal">
-        <div class="tech__top"><span class="tech__num">02</span><span class="tech__tag">Гибридные операционные</span></div>
-        <h3>Сосуды в 3D прямо в операционной</h3>
-        <p>Биплановый ангиографический комплекс показывает сосуды в режиме 3D во время вмешательства. Для нейрохирургии это золотой стандарт: точность выше, риск ошибки ниже.</p>
-        <div class="chips-inline"><span>Нейрохирургия</span><span>Рентгенохирургия</span></div>
+      <article class="tcard">
+        <div class="tech__top"><span class="tech__num">02</span><span class="tech__tag">Нейрохирургия</span></div>
+        <h3>Сосуды в 3D</h3>
+        <p>Биплановый ангиограф показывает сосуды прямо в операционной.</p>
       </article>
-
-      <article class="tech__card reveal">
+      <article class="tcard">
         <div class="tech__top"><span class="tech__num">03</span><span class="tech__tag">Цифровая хирургия</span></div>
-        <h3>Дополненная реальность в операционной</h3>
-        <p>AR для лапароскопии, флуоресценция и гиперспектральная визуализация. Каждая операция записывается, поэтому качество разбирают по записи, а не по памяти.</p>
-        <div class="chips-inline"><span>AR-навигация</span><span>Видеопротокол</span></div>
+        <h3>AR и флуоресценция</h3>
+        <p>Хирург видит скрытые структуры, каждая операция записывается.</p>
       </article>
-
-      <article class="tech__card reveal">
+      <article class="tcard">
         <div class="tech__top"><span class="tech__num">04</span><span class="tech__tag">Эндоскопия</span></div>
-        <h3>Границы опухоли видны во время операции</h3>
-        <p>ICG-навигация и флуоресценция в ближнем инфракрасном спектре: 3D, 4K и подсветка зоны риска. Хирург точнее определяет, что удалять.</p>
-        <div class="chips-inline"><span>ICG</span><span>4K</span><span>NIR</span></div>
+        <h3>ICG-навигация</h3>
+        <p>Границы опухоли подсвечены во время операции.</p>
       </article>
-
-      <article class="tech__card reveal">
-        <div class="tech__top"><span class="tech__num">05</span><span class="tech__tag">Онкологический центр</span></div>
-        <h3>Химио- и радиотерапия в одном центре</h3>
-        <p>Лучевая и радиотерапия на оборудовании последнего поколения, радионуклидная диагностика, 27 кресел амбулаторной химиотерапии и онкологические консилиумы.</p>
-        <div class="chips-inline"><span>Радиотерапия</span><span>Радионуклиды</span></div>
+      <article class="tcard">
+        <div class="tech__top"><span class="tech__num">05</span><span class="tech__tag">Онкоцентр</span></div>
+        <h3>Химио- и радиотерапия</h3>
+        <p>27 кресел, радионуклиды и консилиумы в одном центре.</p>
       </article>
-
-      <article class="tech__card reveal">
+      <article class="tcard">
         <div class="tech__top"><span class="tech__num">06</span><span class="tech__tag">Лаборатория</span></div>
-        <h3>Анализы делают в самом комплексе</h3>
-        <p>Лабораторный центр 7 000 м², 3-й уровень: биохимия, иммунология, цитология, морфология, молекулярная генетика и цифровая патоморфология. Результат не ждут из другой лаборатории.</p>
-        <div class="chips-inline"><span>Молекулярная генетика</span><span>Патоморфология</span></div>
+        <h3>Лаборатория 3 уровня</h3>
+        <p>Все анализы на месте, включая молекулярную генетику.</p>
       </article>
-    </div>
-
-    <div class="infra reveal">
-      <div><b>Вертолётная площадка</b><span>санавиация для пациентов из регионов</span></div>
-      <div><b>Собственный автопарк СМП</b><span>скорая помощь клиники</span></div>
-      <div><b>286 палат</b><span>круглосуточный стационар</span></div>
-      <div><b>Единое ИТ-пространство</b><span>данные пациента онлайн, телемедицина</span></div>
     </div>
   </div>
 </section>
@@ -630,15 +681,15 @@ details[open] summary::after{transform:rotate(-135deg)}
 </section>
 
 <!-- ================= ЭКСПЕРТЫ ================= -->
-<section class="section section--tint" id="experts">
+<section class="section" id="experts">
   <div class="container">
     <div class="sec-head">
       <div>
         <div class="eyebrow reveal">Эксперты</div>
         <h2 class="h2 reveal">Кто будет вести ваш случай</h2>
-        <p class="lead reveal">Три профиля, которые чаще всего определяют исход: хирургия, онкология, кардиология. Всего 25 ведущих экспертов, семь профессоров и одиннадцать докторов медицинских наук.</p>
+        <p class="lead reveal">Всего 25 ведущих экспертов, 7 профессоров и 11 докторов медицинских наук.</p>
       </div>
-      <a class="sec-head__link reveal" href="/doctors/">Все врачи клиники →</a>
+      <a class="sec-head__link reveal" href="/doctors/">Смотреть всех врачей →</a>
     </div>
 
     <div class="feat">
@@ -648,7 +699,7 @@ details[open] summary::after{transform:rotate(-135deg)}
           <div class="feat__dir">Абдоминальная хирургия</div>
           <div class="feat__name">Кащенко Виктор Анатольевич</div>
           <div class="feat__deg">д.м.н., профессор</div>
-          <p class="feat__note">Заведующий кафедрой факультетской хирургии СПбГУ, лауреат премии Правительства РФ. Заместитель главного врача по хирургии.</p>
+          <p class="feat__note">Заведующий кафедрой факультетской хирургии СПбГУ, лауреат премии Правительства РФ.</p>
         </div>
       </a>
       <a class="feat__card reveal" href="/doctors/onkologiya/rumyantsev-pavel-olegovich/">
@@ -657,7 +708,7 @@ details[open] summary::after{transform:rotate(-135deg)}
           <div class="feat__dir">Онкология и радиология</div>
           <div class="feat__name">Румянцев Павел Олегович</div>
           <div class="feat__deg">д.м.н.</div>
-          <p class="feat__note">Заместитель главного врача по онкологии-радиологии. Радионуклидная диагностика и терапия, ведёт онкологические консилиумы.</p>
+          <p class="feat__note">Заместитель главного врача по онкологии-радиологии, ведёт консилиумы.</p>
         </div>
       </a>
       <a class="feat__card reveal" href="/doctors/">
@@ -666,15 +717,15 @@ details[open] summary::after{transform:rotate(-135deg)}
           <div class="feat__dir">Кардиология</div>
           <div class="feat__name">Обрезан Андрей Григорьевич</div>
           <div class="feat__deg">д.м.н., профессор</div>
-          <p class="feat__note">Главный врач ГК «ММЦ», заслуженный врач РФ. Кардиология, функциональная и ультразвуковая диагностика.</p>
+          <p class="feat__note">Главный врач ГК «ММЦ», заслуженный врач РФ.</p>
         </div>
       </a>
     </div>
 
-    <div class="experts__stats reveal" style="margin-top:34px">
+    <div class="experts__stats reveal">
       <div class="experts__stat"><b>25</b><span>ведущих экспертов</span></div>
       <div class="experts__stat"><b>7</b><span>профессоров</span></div>
-      <div class="experts__stat"><b>11</b><span>докторов медицинских наук</span></div>
+      <div class="experts__stat"><b>11</b><span>докторов наук</span></div>
       <div class="experts__stat"><b>2</b><span>заслуженных врача РФ</span></div>
     </div>
 
@@ -781,7 +832,7 @@ details[open] summary::after{transform:rotate(-135deg)}
       </a>
     </div>
 
-    <p class="experts__note reveal">Степени и звания — по данным сайтов клиники и ГК «ММЦ» на 25.11.2026. Профили, стаж и стоимость приёма — в разделе <a href="/doctors/">«Врачи»</a>.</p>
+    <p class="experts__note reveal">Степени и звания — по данным сайтов клиники и ГК «ММЦ» на 25.11.2026.</p>
   </div>
 </section>
 
@@ -789,35 +840,14 @@ details[open] summary::after{transform:rotate(-135deg)}
 <section class="section" id="journey">
   <div class="container">
     <div class="eyebrow reveal">Как мы работаем</div>
-    <h2 class="h2 reveal">Пять шагов от звонка до восстановления</h2>
-    <p class="lead reveal">Команда, которая принимает решение, ведёт вас до конца. Ни один этап не уходит в другую клинику.</p>
+    <h2 class="h2 reveal">Пять шагов до восстановления</h2>
 
     <div class="journey">
-      <div class="step reveal">
-        <span class="step__n">01</span>
-        <h3>Заявка</h3>
-        <p>Звонок или форма на сайте. Подбираем специалиста, время и проверяем условия по ОМС и ДМС.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__n">02</span>
-        <h3>Консультация и обследование</h3>
-        <p>Осмотр, снимки и анализы. Диагностика и лаборатория на месте, без поездок по городу.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__n">03</span>
-        <h3>Консилиум и план</h3>
-        <p>Профильные эксперты согласуют тактику: что делаем, в какие сроки и сколько это стоит.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__n">04</span>
-        <h3>Лечение</h3>
-        <p>Операция в одной из 14 операционных, лекарственная или лучевая терапия по согласованному плану.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step__n">05</span>
-        <h3>Восстановление</h3>
-        <p>Реабилитация и наблюдение в клинике, без перевода в другое учреждение.</p>
-      </div>
+      <div class="step reveal"><span class="step__n">01</span><h3>Заявка</h3><p>Подбираем врача и время, проверяем ОМС и ДМС.</p></div>
+      <div class="step reveal"><span class="step__n">02</span><h3>Обследование</h3><p>Снимки и анализы на месте, без поездок.</p></div>
+      <div class="step reveal"><span class="step__n">03</span><h3>Консилиум</h3><p>Эксперты согласуют план и стоимость.</p></div>
+      <div class="step reveal"><span class="step__n">04</span><h3>Лечение</h3><p>Операция, химио- или лучевая терапия.</p></div>
+      <div class="step reveal"><span class="step__n">05</span><h3>Восстановление</h3><p>Реабилитация и наблюдение в клинике.</p></div>
     </div>
 
     <div class="journey__cta reveal">
@@ -834,7 +864,6 @@ details[open] summary::after{transform:rotate(-135deg)}
       <div>
         <div class="eyebrow reveal">Клинические случаи</div>
         <h2 class="h2 reveal">Что уже сделано</h2>
-        <p class="lead reveal">Три случая из практики клиники: с диагнозом, ходом операции и результатом.</p>
       </div>
       <a class="sec-head__link reveal" href="/experience/">Все случаи →</a>
     </div>
@@ -842,79 +871,52 @@ details[open] summary::after{transform:rotate(-135deg)}
     <div class="cases">
       <a class="case reveal" href="/experience/kardiokhirurgiya_operacii/torakoskopicheskaya-plastika-mitralnogo-klapana/">
         <div class="case__tag">Кардиохирургия</div>
-        <h3>Пластика митрального клапана на роботе da Vinci Xi</h3>
-        <p>Тяжёлая митральная недостаточность. Клапан восстановлен через разрез 3 см, грудную клетку не вскрывали. Первый такой случай в Петербурге.</p>
+        <h3>Клапан восстановлен через разрез 3 см</h3>
+        <p>Первый в Петербурге случай пластики на da Vinci Xi.</p>
         <span class="scen__link">Читать случай →</span>
       </a>
       <a class="case reveal" href="/experience/neyrokhirurgiya/udalenie-gigantskoy-vnutricherepnoy-opukholi-u-podrostka/">
         <div class="case__tag">Нейрохирургия</div>
-        <h3>Удаление гигантской внутричерепной опухоли у подростка</h3>
-        <p>Случай, где размер новообразования и возраст пациента не оставляли права на ошибку.</p>
+        <h3>Гигантская опухоль мозга у подростка</h3>
+        <p>Случай, где размер опухоли не оставлял права на ошибку.</p>
         <span class="scen__link">Читать случай →</span>
       </a>
       <a class="case reveal" href="/experience/travmatologiya/odnomomentnoe-endoprotezirovanie-pravogo-kolennogo-i-levogo-tazobedrennogo-sustavov/">
         <div class="case__tag">Травматология</div>
-        <h3>Одномоментное эндопротезирование коленного и тазобедренного суставов</h3>
-        <p>Два сустава за одну операцию: меньше наркозов, короче восстановление.</p>
+        <h3>Два сустава за одну операцию</h3>
+        <p>Меньше наркозов, короче восстановление.</p>
         <span class="scen__link">Читать случай →</span>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= УСЛОВИЯ ================= -->
-<section class="section" id="terms">
-  <div class="container">
-    <div class="eyebrow reveal">Условия</div>
-    <h2 class="h2 reveal">Оплата, документы, дорога</h2>
-
-    <div class="terms">
-      <div class="term reveal">
-        <h3>Оплата и документы</h3>
-        <ul>
-          <li>Приём по ОМС, ДМС и платно. Условия по вашему полису уточнит контакт-центр.</li>
-          <li>Стоимость приёма указана в карточке каждого врача.</li>
-          <li>На первый приём возьмите паспорт, полис, снимки и результаты анализов.</li>
-        </ul>
-      </div>
-      <div class="term reveal">
-        <h3>Дорога и парковка</h3>
-        <ul>
-          <li>Комплекс на границе Санкт-Петербурга и Ленинградской области: 188632, Всеволожский район, Юкковское поселение.</li>
-          <li>Парковка на территории по заявке через контакт-центр.</li>
-          <li>Для пациентов из регионов работает вертолётная площадка для санавиации.</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- ================= FAQ ================= -->
-<section class="section section--tint" id="faq">
+<section class="section" id="faq">
   <div class="container">
     <div class="eyebrow reveal">Вопросы</div>
     <h2 class="h2 reveal">Что чаще всего спрашивают</h2>
 
-    <div class="acc reveal" style="margin-top:34px">
+    <div class="acc reveal">
       <details open>
         <summary>Можно ли лечиться по ОМС или ДМС?</summary>
         <div class="acc__body">Да. Клиника принимает пациентов на платной основе, по полисам ОМС и ДМС. Условия по вашему полису уточнит контакт-центр до записи.</div>
       </details>
       <details>
         <summary>Сколько стоит приём и лечение?</summary>
-        <div class="acc__body">Стоимость приёма указана в карточке конкретного врача. Стоимость лечения обсуждается на консультации и фиксируется в плане до начала, после диагностики и консилиума.</div>
+        <div class="acc__body">Стоимость приёма указана в карточке конкретного врача. Стоимость лечения обсуждается на консультации и фиксируется в плане до начала.</div>
       </details>
       <details>
         <summary>Нужно ли направление от врача?</summary>
-        <div class="acc__body">Нет, записаться можно самостоятельно. Если у вас уже есть снимки, анализы и выписки, возьмите их: это сократит путь до решения.</div>
+        <div class="acc__body">Нет, записаться можно самостоятельно. Если есть снимки, анализы и выписки, возьмите их: это сократит путь до решения.</div>
       </details>
       <details>
         <summary>Можно ли приехать из другого региона?</summary>
-        <div class="acc__body">Да. У комплекса есть вертолётная площадка для санавиации и собственный автопарк скорой помощи, стационар на 420 коек. Контакт-центр помогает с госпитализацией и парковкой.</div>
+        <div class="acc__body">Да. Есть вертолётная площадка для санавиации и свой автопарк скорой помощи, стационар на 420 коек. Контакт-центр помогает с госпитализацией и парковкой.</div>
       </details>
       <details>
         <summary>Есть ли детское отделение?</summary>
-        <div class="acc__body">Да, в стационаре 286 палат для взрослых и детей, работает детская хирургия и педиатрия. Приём проходит с сопровождением родителя.</div>
+        <div class="acc__body">Да, в стационаре 286 палат для взрослых и детей, работают детская хирургия и педиатрия.</div>
       </details>
     </div>
   </div>
@@ -926,7 +928,7 @@ details[open] summary::after{transform:rotate(-135deg)}
     <div class="contact__head reveal">
       <div class="eyebrow">Запись</div>
       <h2 class="h2">Записаться на приём</h2>
-      <p class="lead">Контакт-центр работает ежедневно: подберём специалиста, проверим условия по ОМС и ДМС, согласуем парковку и госпитализацию.</p>
+      <p class="lead">Контакт-центр подберёт специалиста, проверит условия по ОМС и ДМС, согласует парковку и госпитализацию.</p>
     </div>
 
     <div class="contact__grid">
@@ -936,13 +938,11 @@ details[open] summary::after{transform:rotate(-135deg)}
         <a class="contact__tel contact__tel--sm" href="tel:+78126303003">+7 (812) 630-30-03</a>
         <div class="contact__note">Скорая помощь выезжает круглосуточно</div>
       </div>
-
       <div class="contact__col reveal">
         <div class="contact__label">Записаться онлайн</div>
         <a class="btn" href="/">Онлайн-запись</a>
         <div class="contact__note">Или оставьте заявку — перезвоним</div>
       </div>
-
       <div class="contact__col reveal">
         <div class="contact__label">Приехать</div>
         <div class="contact__addr">188632, Ленинградская область, Всеволожский район, Юкковское поселение, территория «Клиника «Белоостров».</div>
@@ -951,6 +951,7 @@ details[open] summary::after{transform:rotate(-135deg)}
     </div>
   </div>
 </section>
+
 
 </main>
 
@@ -1002,17 +1003,26 @@ details[open] summary::after{transform:rotate(-135deg)}
 
 <script>
 (function(){
-  // фильтр экспертов
-  var chips = document.querySelectorAll('.chip');
-  var cards = document.querySelectorAll('.ecard');
-  chips.forEach(function(chip){
-    chip.addEventListener('click', function(){
-      var f = chip.getAttribute('data-filter');
-      chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c === chip)); });
-      cards.forEach(function(card){
-        card.hidden = !(f === 'all' || card.getAttribute('data-g') === f);
-      });
-    });
+  // рейлы: стрелки и состояние
+  document.querySelectorAll('[data-rail]').forEach(function(track){
+    var nav = track.parentNode.querySelector('[data-nav]');
+    if (!nav) return;
+    var prev = nav.querySelector('[data-prev]');
+    var next = nav.querySelector('[data-next]');
+    function step(){
+      var first = track.children[0];
+      return first ? first.getBoundingClientRect().width + 16 : 320;
+    }
+    function upd(){
+      var max = track.scrollWidth - track.clientWidth - 4;
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max;
+    }
+    if (prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step()*2, behavior:'smooth'}); });
+    if (next) next.addEventListener('click', function(){ track.scrollBy({left: step()*2, behavior:'smooth'}); });
+    track.addEventListener('scroll', upd, {passive:true});
+    window.addEventListener('resize', upd);
+    upd();
   });
 
   // активный пункт поднавигации
@@ -1065,6 +1075,8 @@ details[open] summary::after{transform:rotate(-135deg)}
 </script>
 </body>
 </html>
+
+
 
 
 
