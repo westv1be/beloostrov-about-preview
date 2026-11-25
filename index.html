@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -192,20 +192,100 @@ details[open] summary::after{transform:rotate(-135deg)}
 .acc__body li{position:relative;padding-left:16px}
 .acc__body li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:rgba(0,137,250,.55)}
 
-/* ---------- cta ---------- */
-.cta{position:relative;overflow:hidden;background:var(--navy);color:#fff;border-radius:28px;padding:52px 56px;display:grid;grid-template-columns:1.35fr 1fr;gap:44px;align-items:center}
-.cta::before{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(0,137,250,.5),rgba(0,137,250,0) 65%)}
-.cta h2{font-size:clamp(24px,2.6vw,32px);font-weight:300;line-height:1.2;letter-spacing:-.4px}
-.cta p{margin-top:14px;font-size:14px;line-height:1.7;color:rgba(255,255,255,.74);max-width:440px}
-.cta__box{position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:26px}
-.cta__box .t{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
-.cta__tel{display:block;margin-top:10px;font-size:22px;font-weight:700;text-decoration:none;letter-spacing:-.3px}
-.cta__tel+.cta__tel{margin-top:2px;font-size:18px;opacity:.85}
-.cta__box .btn{width:100%;margin-top:20px}
-.cta__note{margin-top:12px;font-size:11.5px;color:rgba(255,255,255,.55);text-align:center}
+/* ---------- scenarios ---------- */
+.scen{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}
+.scen__card{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:22px;padding:26px 24px;background:#fff;text-decoration:none;color:inherit;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.scen__card:hover{border-color:#C6DBF2;box-shadow:0 22px 44px -32px rgba(21,57,107,.45);transform:translateY(-2px)}
+.scen__tag{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.scen h3{font-size:16.5px;line-height:1.35;color:var(--navy);font-weight:700;margin-top:4px}
+.scen p{font-size:13px;line-height:1.6;color:var(--muted);flex:1}
+.scen__link{font-size:12.5px;color:var(--blue);font-weight:700;margin-top:6px;display:inline-block}
+
+/* ---------- why ---------- */
+.why{margin-top:38px;border-top:1px solid var(--line)}
+.why__row{display:grid;grid-template-columns:58px 1.05fr 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
+.why__n{font-size:11px;letter-spacing:.16em;color:#A9BACD;font-weight:700;padding-top:6px}
+.why h3{font-size:20px;line-height:1.3;color:var(--navy);font-weight:700;letter-spacing:-.2px}
+.why p{font-size:14px;line-height:1.7;color:var(--muted)}
+
+/* ---------- featured experts ---------- */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.feat__card{display:grid;grid-template-columns:112px 1fr;gap:18px;border:1px solid var(--line);border-radius:22px;padding:18px;background:#fff;text-decoration:none;color:inherit;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.feat__card:hover{border-color:#C6DBF2;box-shadow:0 22px 44px -32px rgba(21,57,107,.45);transform:translateY(-2px)}
+.feat__photo{width:112px;height:140px;border-radius:62px 0;overflow:hidden;background:var(--bg-2)}
+.feat__photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.feat__dir{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.feat__name{font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.3;margin-top:6px}
+.feat__deg{font-size:11.5px;color:var(--muted);margin-top:3px}
+.feat__note{font-size:11.5px;line-height:1.55;color:#33475E;margin-top:9px}
+
+/* ---------- team strip ---------- */
+.team{display:flex;gap:14px;overflow-x:auto;padding:4px 0 16px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#C9D8EA transparent;-webkit-mask-image:linear-gradient(to right,#000 94%,transparent 100%);mask-image:linear-gradient(to right,#000 94%,transparent 100%)}
+.team::-webkit-scrollbar{height:6px}
+.team::-webkit-scrollbar-thumb{background:#C9D8EA;border-radius:3px}
+.team__item{flex:0 0 148px;scroll-snap-align:start;text-decoration:none;color:inherit}
+.team__ph{width:148px;height:148px;border-radius:82px 0;overflow:hidden;background:var(--bg-2)}
+.team__ph img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.team__ph .mono{font-size:40px}
+.team__name{font-size:12px;font-weight:700;color:var(--navy);line-height:1.3;margin-top:9px}
+.team__dir{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px;line-height:1.35}
+
+/* ---------- journey ---------- */
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:46px}
+.step{position:relative;padding-top:30px;border-top:2px solid var(--blue)}
+.step__n{position:absolute;top:-17px;left:0;background:#fff;padding-right:8px;font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--blue)}
+.step h3{font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.35}
+.step p{font-size:12.5px;line-height:1.55;color:var(--muted);margin-top:8px}
+
+/* ---------- cases ---------- */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.case{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:22px;padding:26px;background:#fff;text-decoration:none;color:inherit;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.case:hover{border-color:#C6DBF2;box-shadow:0 22px 44px -32px rgba(21,57,107,.45);transform:translateY(-2px)}
+.case__tag{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.case h3{font-size:16px;line-height:1.4;color:var(--navy);font-weight:700;margin:12px 0 10px}
+.case p{font-size:13px;line-height:1.6;color:var(--muted);flex:1}
+
+/* ---------- terms ---------- */
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.term{border:1px solid var(--line);border-radius:22px;padding:30px;background:#fff}
+.term h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:14px}
+.term ul{display:grid;gap:9px}
+.term li{position:relative;padding-left:16px;font-size:13.5px;line-height:1.6;color:var(--muted)}
+.term li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:rgba(0,137,250,.55)}
+
+/* ---------- inline cta ---------- */
+.inline-cta{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.inline-cta__in{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:26px 0}
+.inline-cta__t{font-size:16px;font-weight:700;color:var(--navy)}
+.inline-cta__s{margin-top:4px;font-size:13px;color:var(--muted)}
+
+/* ---------- contact band ---------- */
+#complex{padding-bottom:56px}
+.cta-band{
+  position:relative;isolation:isolate;overflow:hidden;color:#fff;
+  background:linear-gradient(118deg,#112E58 0%,#15396B 58%,#1B4A83 100%);
+  padding:66px 0 62px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.cta-band::before{
+  content:"";position:absolute;right:-180px;top:-220px;width:620px;height:620px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,137,250,.34),rgba(0,137,250,0) 62%);
+  z-index:-1;
+}
+.cta-band__in{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
+.cta-band__eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:700;margin-bottom:16px}
+.cta-band h2{font-size:clamp(26px,2.9vw,36px);font-weight:300;line-height:1.16;letter-spacing:-.5px;max-width:520px}
+.cta-band p{margin-top:18px;font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.68);max-width:470px}
+.cta-band__right{padding-left:54px;border-left:1px solid rgba(255,255,255,.16)}
+.cta-band__label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-bottom:14px}
+.cta-band__tel{display:block;font-size:clamp(24px,2.3vw,30px);font-weight:700;letter-spacing:-.5px;text-decoration:none;line-height:1.2}
+.cta-band__tel:hover{color:#9FD3FF}
+.cta-band__tel--small{font-size:18px;font-weight:400;opacity:.8;margin-top:4px}
+.cta-band__actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:28px}
+.cta-band__note{font-size:12px;color:rgba(255,255,255,.5);line-height:1.45}
 
 /* ---------- footer ---------- */
-.footer{background:#0E2646;color:#fff;margin-top:86px;padding:52px 0 34px}
+.footer{background:#0E2646;color:#fff;margin-top:0;padding:52px 0 34px}
 .footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
 .footer img{height:28px;width:auto;filter:brightness(0) invert(1);opacity:.95}
 .footer p{margin-top:16px;font-size:12px;line-height:1.7;color:rgba(255,255,255,.55);max-width:250px}
@@ -229,14 +309,28 @@ details[open] summary::after{transform:rotate(-135deg)}
   .topbar__right{margin-left:auto}
   .egrid{grid-template-columns:repeat(4,1fr)}
 }
+@media (max-width:1080px){
+  .scen{grid-template-columns:repeat(2,1fr)}
+  .feat{grid-template-columns:1fr}
+  .journey{grid-template-columns:repeat(3,1fr)}
+}
 @media (max-width:900px){
   .egrid{grid-template-columns:repeat(3,1fr)}
+  .why__row{grid-template-columns:40px 1fr;gap:18px}
+  .why p{grid-column:2}
+  .steps{grid-template-columns:1fr}
+  .journey{grid-template-columns:1fr;gap:0;margin-top:34px}
+  .step{border-top:0;border-left:2px solid var(--blue);padding:0 0 26px 22px}
+  .step__n{position:static;background:none;padding:0;display:block;margin-bottom:6px}
+  .cases,.terms{grid-template-columns:1fr}
   .hero__facts{grid-template-columns:repeat(2,1fr);gap:20px 18px}
   .facts{grid-template-columns:repeat(2,1fr)}
   .tech{grid-template-columns:1fr}
   .infra{grid-template-columns:repeat(2,1fr)}
   .buildings{grid-template-columns:1fr}
-  .cta{grid-template-columns:1fr;padding:40px 32px;gap:28px}
+  .cta-band{padding:52px 0 48px}
+  .cta-band__in{grid-template-columns:1fr;gap:34px}
+  .cta-band__right{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-top:30px}
   .footer__grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:720px){
@@ -254,9 +348,20 @@ details[open] summary::after{transform:rotate(-135deg)}
   .hero__lead{font-size:15px}
   .facts{grid-template-columns:1fr 1fr}
   .fact{padding:20px}
+  .scen{grid-template-columns:1fr}
+  .feat__card{grid-template-columns:92px 1fr;gap:14px;padding:14px}
+  .feat__photo{width:92px;height:118px}
+  .team__item{flex:0 0 128px}
+  .team__ph{width:128px;height:128px}
+  .why h3{font-size:17px}
   .experts__stats{display:grid;grid-template-columns:1fr 1fr;gap:20px 18px}
   .footer__grid{grid-template-columns:1fr}
-  .footer{margin-top:58px}
+  .footer{margin-top:0}
+  .cta-band{padding:44px 0 42px}
+  .cta-band__actions{gap:14px;width:100%}
+  .cta-band__actions .btn{width:100%}
+  .inline-cta__in{flex-direction:column;align-items:flex-start;gap:16px;padding:24px 0}
+  .inline-cta__in .btn{width:100%}
   .btns-row{display:flex;gap:10px;flex-wrap:wrap}
 }
 @media (max-width:420px){
@@ -277,10 +382,10 @@ details[open] summary::after{transform:rotate(-135deg)}
       <img src="assets/img/logo.svg" alt="ММЦ · Клиника высоких технологий Белоостров">
     </a>
     <nav class="nav" aria-label="Основная навигация">
-      <a href="#about">О клинике</a>
+      <a href="#directions">Направления</a>
       <a href="#tech">Технологии</a>
       <a href="#experts">Эксперты</a>
-      <a href="#complex">Комплекс</a>
+      <a href="#cases">Случаи</a>
       <a href="/doctors/">Врачи</a>
     </nav>
     <div class="topbar__right">
@@ -295,107 +400,154 @@ details[open] summary::after{transform:rotate(-135deg)}
   <div class="hero__bg" role="img" aria-label="Клиника высоких технологий «Белоостров»"></div>
   <div class="container hero__in">
     <nav class="crumbs" aria-label="Хлебные крошки"><a href="/">Главная</a> &nbsp;→&nbsp; О клинике</nav>
-    <h1>Клиника высоких технологий «Белоостров»</h1>
-    <p class="hero__lead">Флагманский проект ГК «ММЦ» на границе Санкт-Петербурга и Ленинградской области: три корпуса, стационар на 420 коек, 14 операционных в центральном оперблоке и 25 ведущих экспертов по направлениям.</p>
+    <h1>Сложные операции и лечение рака в одном комплексе</h1>
+    <p class="hero__lead">Робот da Vinci Xi, гибридные операционные с 3D-ангиографом и лаборатория 3-го уровня. Диагностика, операция, лекарственная и лучевая терапия, реабилитация проходят на одной территории — в клинике высоких технологий «Белоостров».</p>
     <div class="hero__actions">
       <a class="btn" href="#booking">Записаться на приём</a>
-      <a class="btn btn--ghost" href="#tech">Технологии клиники</a>
+      <a class="btn btn--ghost" href="#journey">Как мы лечим</a>
     </div>
     <div class="hero__facts">
-      <div><b>30,5 га</b><span>территория комплекса</span></div>
-      <div><b>112 000 м²</b><span>многопрофильный центр</span></div>
+      <div><b>14</b><span>операционных в центральном оперблоке</span></div>
+      <div><b>da Vinci Xi</b><span>робот-ассистированная хирургия</span></div>
       <div><b>420 коек</b><span>стационар для взрослых и детей</span></div>
-      <div><b>25</b><span>ведущих экспертов по направлениям</span></div>
+      <div><b>7</b><span>профессоров среди 25 экспертов</span></div>
     </div>
   </div>
 </section>
 
 <nav class="subnav" aria-label="Разделы страницы">
   <div class="container subnav__in">
-    <a href="#about">О клинике</a>
+    <a href="#directions">Направления</a>
     <a href="#tech">Технологии</a>
     <a href="#experts">Эксперты</a>
-    <a href="#complex">Комплекс</a>
+    <a href="#journey">Как мы лечим</a>
+    <a href="#cases">Случаи</a>
     <a href="#booking">Запись</a>
   </div>
 </nav>
 
 <main id="main">
 
-<!-- ================= О КЛИНИКЕ ================= -->
-<section class="section" id="about">
+<!-- ================= НАПРАВЛЕНИЯ ================= -->
+<section class="section" id="directions">
   <div class="container">
-    <div class="eyebrow reveal">О клинике</div>
-    <h2 class="h2 reveal">Диагностика, хирургия, терапия и реабилитация — в одном комплексе</h2>
-    <div class="intro__text reveal" style="margin-top:24px">
-      <p>«Белоостров» объединяет три корпуса на одной территории: многопрофильный медицинский центр, онкологический центр и лабораторный центр. 112 000 м², 420 коек и 286 палат для взрослых и детей, собственный автопарк скорой помощи и вертолётная площадка для санавиации.</p>
-      <p>Пациента не перевозят между учреждениями: обследование, операция, химио- и радиотерапия, восстановление проходят внутри комплекса. Сложные случаи разбирают на консилиумах профильные эксперты — хирурги, онкологи, радиологи, анестезиологи и диагносты.</p>
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow reveal">С чем к нам приходят</div>
+        <h2 class="h2 reveal">Четыре повода обратиться</h2>
+        <p class="lead reveal">Сложный диагноз, повторная операция, второй взгляд на снимки. Здесь есть диагностика, операционная и консилиум на одной территории.</p>
+      </div>
+      <a class="sec-head__link reveal" href="/directions/">Все направления →</a>
     </div>
 
-    <div class="facts reveal">
-      <div class="fact"><b>30,5 га</b><span>площадь территории комплекса</span></div>
-      <div class="fact"><b>112 000 м²</b><span>многопрофильный медицинский центр</span></div>
-      <div class="fact"><b>420 коек</b><span>круглосуточный стационар, 286 палат</span></div>
-      <div class="fact"><b>14</b><span>операционных в центральном оперблоке</span></div>
-      <div class="fact"><b>7 000 м²</b><span>лабораторный центр 3-го уровня</span></div>
-      <div class="fact"><b>&gt; 800</b><span>сотрудников клиники</span></div>
+    <div class="scen">
+      <a class="scen__card reveal" href="/directions/onkologicheskaya-pomoshch/">
+        <div class="scen__tag">Онкология</div>
+        <h3>Рак: диагностика, консилиум, лечение</h3>
+        <p>Экспертная диагностика, онкологический консилиум, операция, химио- и радиотерапия в одном центре.</p>
+        <span class="scen__link">Как мы лечим рак →</span>
+      </a>
+      <a class="scen__card reveal" href="/directions/surgery/">
+        <div class="scen__tag">Кардиохирургия</div>
+        <h3>Пластика клапана через разрез 3 см</h3>
+        <p>Операция на сердце на роботе da Vinci Xi: грудную клетку не вскрывают, восстановление короче.</p>
+        <span class="scen__link">Технология операции →</span>
+      </a>
+      <a class="scen__card reveal" href="/directions/surgery/">
+        <div class="scen__tag">Нейрохирургия</div>
+        <h3>Сосуды и опухоли головного мозга</h3>
+        <p>Гибридные операционные с биплановым ангиографом: внутрисосудистые вмешательства в режиме 3D.</p>
+        <span class="scen__link">Хирургия клиники →</span>
+      </a>
+      <a class="scen__card reveal" href="/directions/reabilitatsiya/">
+        <div class="scen__tag">Травматология и ортопедия</div>
+        <h3>Суставы: вернуть движение</h3>
+        <p>Эндопротезирование, артроскопия и спортивная травма. Операция и реабилитация в одном комплексе.</p>
+        <span class="scen__link">Реабилитация →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПОЧЕМУ ================= -->
+<section class="section section--tint" id="why">
+  <div class="container">
+    <div class="eyebrow reveal">Почему здесь</div>
+    <h2 class="h2 reveal">Что стоит за результатом</h2>
+
+    <div class="why">
+      <div class="why__row reveal">
+        <div class="why__n">01</div>
+        <h3>Решение принимает команда</h3>
+        <p>Сложные случаи разбирают на консилиумах: хирург, онколог, радиолог, анестезиолог и диагност видят одну картину. В клинике работают 25 ведущих экспертов по направлениям, среди них семь профессоров и одиннадцать докторов медицинских наук.</p>
+      </div>
+      <div class="why__row reveal">
+        <div class="why__n">02</div>
+        <h3>Весь путь внутри одного комплекса</h3>
+        <p>Три корпуса на 30,5 га: диагностика, 14 операционных в центральном оперблоке, стационар на 420 коек, лаборатория 3-го уровня, реабилитация. Исследования выполняют на месте, пациента не перевозят между учреждениями.</p>
+      </div>
+      <div class="why__row reveal">
+        <div class="why__n">03</div>
+        <h3>Робот da Vinci Xi и гибридные операционные</h3>
+        <p>Первую в Петербурге робот-ассистированную пластику митрального клапана выполнили здесь. Биплановый ангиограф даёт 3D-картинку сосудов прямо в операционной, ICG-навигация подсвечивает границы опухоли во время вмешательства.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ================= ТЕХНОЛОГИИ ================= -->
-<section class="section section--tint" id="tech">
+<section class="section" id="tech">
   <div class="container">
     <div class="sec-head">
       <div>
         <div class="eyebrow reveal">Технологии</div>
-        <h2 class="h2 reveal">Гибридные операционные, цифровая хирургия, ядерная медицина</h2>
-        <p class="lead reveal">Шесть технологических блоков, которые определяют, какие вмешательства и диагностику клиника выполняет на месте — без перевозки пациента и внешних подрядчиков.</p>
+        <h2 class="h2 reveal">Шесть технологий и результат, который они дают</h2>
+        <p class="lead reveal">Меньше травмы, точнее удаление, быстрее диагноз. У каждой технологии ниже — понятный эффект для пациента.</p>
       </div>
       <a class="sec-head__link reveal" href="/directions/surgery/">Хирургия клиники →</a>
     </div>
 
     <div class="tech">
       <article class="tech__card reveal">
-        <div class="tech__top"><span class="tech__num">01</span><span class="tech__tag">Операционный блок</span></div>
-        <h3>Гибридные операционные</h3>
-        <p>Биплановый ангиографический комплекс: интервенции в режиме 3D без перемещения пациента между кабинетами. Для нейрохирургии это золотой стандарт внутрисосудистых операций — выше точность, ниже риск ошибки.</p>
-        <div class="chips-inline"><span>Нейрохирургия</span><span>Рентгенохирургия</span><span>Сосудистая хирургия</span></div>
+        <div class="tech__top"><span class="tech__num">01</span><span class="tech__tag">Роботическая хирургия</span></div>
+        <h3>Пластика клапана через разрез 3 см</h3>
+        <p>Робот da Vinci Xi повторяет движения рук хирурга с большей аккуратностью и работает в труднодоступных местах. Грудную клетку не вскрывают, клапан сохраняют свой. Первый такой случай в Петербурге выполнили здесь, в 2026 году.</p>
+        <div class="chips-inline"><span>Кардиохирургия</span><span>Клапаны сердца</span></div>
       </article>
 
       <article class="tech__card reveal">
-        <div class="tech__top"><span class="tech__num">02</span><span class="tech__tag">Цифровая хирургия</span></div>
-        <h3>Дополненная реальность и флуоресценция</h3>
-        <p>AR для лапароскопии, флуоресцентная и гиперспектральная визуализация, обязательная видеозапись каждой операции. Данные пациента идут в едином информационном пространстве в реальном времени.</p>
-        <div class="chips-inline"><span>AR-навигация</span><span>ICG</span><span>Видеопротокол</span></div>
+        <div class="tech__top"><span class="tech__num">02</span><span class="tech__tag">Гибридные операционные</span></div>
+        <h3>Сосуды в 3D прямо в операционной</h3>
+        <p>Биплановый ангиографический комплекс показывает сосуды в режиме 3D во время вмешательства. Для нейрохирургии это золотой стандарт: точность выше, риск ошибки ниже.</p>
+        <div class="chips-inline"><span>Нейрохирургия</span><span>Рентгенохирургия</span></div>
       </article>
 
       <article class="tech__card reveal">
-        <div class="tech__top"><span class="tech__num">03</span><span class="tech__tag">Малоинвазивная хирургия</span></div>
-        <h3>Робот-ассистированные вмешательства</h3>
-        <p>Отдельное направление хирургии клиники: роботические операции с навигационными технологиями безопасности. Меньше травмы доступа — короче восстановление.</p>
-        <div class="chips-inline"><span>Миниинвазивность</span><span>Навигация</span></div>
+        <div class="tech__top"><span class="tech__num">03</span><span class="tech__tag">Цифровая хирургия</span></div>
+        <h3>Дополненная реальность в операционной</h3>
+        <p>AR для лапароскопии, флуоресценция и гиперспектральная визуализация. Каждая операция записывается, поэтому качество разбирают по записи, а не по памяти.</p>
+        <div class="chips-inline"><span>AR-навигация</span><span>Видеопротокол</span></div>
       </article>
 
       <article class="tech__card reveal">
         <div class="tech__top"><span class="tech__num">04</span><span class="tech__tag">Эндоскопия</span></div>
-        <h3>Эндоскопия с ICG-навигацией</h3>
-        <p>Эндоскопические системы с флуоресцентной визуализацией в ближнем инфракрасном спектре: границы новообразования и зоны риска видны прямо во время операции.</p>
-        <div class="chips-inline"><span>3D</span><span>4K</span><span>NIR</span></div>
+        <h3>Границы опухоли видны во время операции</h3>
+        <p>ICG-навигация и флуоресценция в ближнем инфракрасном спектре: 3D, 4K и подсветка зоны риска. Хирург точнее определяет, что удалять.</p>
+        <div class="chips-inline"><span>ICG</span><span>4K</span><span>NIR</span></div>
       </article>
 
       <article class="tech__card reveal">
         <div class="tech__top"><span class="tech__num">05</span><span class="tech__tag">Онкологический центр</span></div>
-        <h3>Радиотерапия и ядерная медицина</h3>
-        <p>Лучевая и радиотерапия на оборудовании последнего поколения, радионуклидная диагностика и терапия, 27 кресел для амбулаторной химиотерапии. Решения — на онкологических консилиумах.</p>
-        <div class="chips-inline"><span>Радиотерапия</span><span>Радионуклиды</span><span>Консилиум</span></div>
+        <h3>Химио- и радиотерапия в одном центре</h3>
+        <p>Лучевая и радиотерапия на оборудовании последнего поколения, радионуклидная диагностика, 27 кресел амбулаторной химиотерапии и онкологические консилиумы.</p>
+        <div class="chips-inline"><span>Радиотерапия</span><span>Радионуклиды</span></div>
       </article>
 
       <article class="tech__card reveal">
         <div class="tech__top"><span class="tech__num">06</span><span class="tech__tag">Лаборатория</span></div>
-        <h3>Лабораторный центр 3-го уровня</h3>
-        <p>7 000 м²: биохимия, иммунология, коагулология, цитология, морфология, микробиология и молекулярно-генетические исследования. Цифровая патоморфология — без внешних подрядчиков.</p>
-        <div class="chips-inline"><span>Молекулярная генетика</span><span>Цифровая патоморфология</span></div>
+        <h3>Анализы делают в самом комплексе</h3>
+        <p>Лабораторный центр 7 000 м², 3-й уровень: биохимия, иммунология, цитология, морфология, молекулярная генетика и цифровая патоморфология. Результат не ждут из другой лаборатории.</p>
+        <div class="chips-inline"><span>Молекулярная генетика</span><span>Патоморфология</span></div>
       </article>
     </div>
 
@@ -408,297 +560,318 @@ details[open] summary::after{transform:rotate(-135deg)}
   </div>
 </section>
 
+<!-- ================= INLINE CTA ================= -->
+<section class="inline-cta">
+  <div class="container inline-cta__in">
+    <div>
+      <div class="inline-cta__t">Не знаете, с чего начать?</div>
+      <div class="inline-cta__s">Контакт-центр подберёт специалиста и проверит условия по ОМС и ДМС.</div>
+    </div>
+    <a class="btn" href="#booking">Записаться на приём</a>
+  </div>
+</section>
+
 <!-- ================= ЭКСПЕРТЫ ================= -->
-<section class="section" id="experts">
+<section class="section section--tint" id="experts">
   <div class="container">
     <div class="sec-head">
       <div>
         <div class="eyebrow reveal">Эксперты</div>
-        <h2 class="h2 reveal">25 ведущих экспертов по направлениям</h2>
-        <p class="lead reveal">Хирурги, онкологи, радиологи, анестезиологи, диагносты. Семь профессоров и одиннадцать докторов медицинских наук — те, кто ведёт самые сложные случаи и задаёт протокол лечения клиники.</p>
+        <h2 class="h2 reveal">Кто будет вести ваш случай</h2>
+        <p class="lead reveal">Три профиля, которые чаще всего определяют исход: хирургия, онкология, кардиология. Всего 25 ведущих экспертов, семь профессоров и одиннадцать докторов медицинских наук.</p>
       </div>
       <a class="sec-head__link reveal" href="/doctors/">Все врачи клиники →</a>
     </div>
 
-    <div class="experts__stats reveal">
-      <div class="experts__stat"><b>25</b><span>направлений</span></div>
+    <div class="feat">
+      <a class="feat__card reveal" href="/doctors/khirurgiya/kashchenko-viktor-anatolvich/">
+        <div class="feat__photo"><img src="assets/experts/kashchenko-viktor-anatolvich.jpg" alt="Кащенко Виктор Анатольевич" loading="lazy"></div>
+        <div>
+          <div class="feat__dir">Абдоминальная хирургия</div>
+          <div class="feat__name">Кащенко Виктор Анатольевич</div>
+          <div class="feat__deg">д.м.н., профессор</div>
+          <p class="feat__note">Заведующий кафедрой факультетской хирургии СПбГУ, лауреат премии Правительства РФ. Заместитель главного врача по хирургии.</p>
+        </div>
+      </a>
+      <a class="feat__card reveal" href="/doctors/onkologiya/rumyantsev-pavel-olegovich/">
+        <div class="feat__photo"><img src="assets/experts/rumyantsev-pavel-olegovich.jpg" alt="Румянцев Павел Олегович" loading="lazy"></div>
+        <div>
+          <div class="feat__dir">Онкология и радиология</div>
+          <div class="feat__name">Румянцев Павел Олегович</div>
+          <div class="feat__deg">д.м.н.</div>
+          <p class="feat__note">Заместитель главного врача по онкологии-радиологии. Радионуклидная диагностика и терапия, ведёт онкологические консилиумы.</p>
+        </div>
+      </a>
+      <a class="feat__card reveal" href="/doctors/">
+        <div class="feat__photo"><img src="assets/experts/obrezan-andrey-grigorevich.jpg" alt="Обрезан Андрей Григорьевич" loading="lazy"></div>
+        <div>
+          <div class="feat__dir">Кардиология</div>
+          <div class="feat__name">Обрезан Андрей Григорьевич</div>
+          <div class="feat__deg">д.м.н., профессор</div>
+          <p class="feat__note">Главный врач ГК «ММЦ», заслуженный врач РФ. Кардиология, функциональная и ультразвуковая диагностика.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="experts__stats reveal" style="margin-top:34px">
+      <div class="experts__stat"><b>25</b><span>ведущих экспертов</span></div>
       <div class="experts__stat"><b>7</b><span>профессоров</span></div>
       <div class="experts__stat"><b>11</b><span>докторов медицинских наук</span></div>
       <div class="experts__stat"><b>2</b><span>заслуженных врача РФ</span></div>
     </div>
 
-    <div class="filters" role="group" aria-label="Фильтр экспертов по направлению">
-      <button class="chip" type="button" data-filter="all" aria-pressed="true">Все</button>
-      <button class="chip" type="button" data-filter="surg" aria-pressed="false">Хирургия</button>
-      <button class="chip" type="button" data-filter="onco" aria-pressed="false">Онкология и диагностика</button>
-      <button class="chip" type="button" data-filter="ter" aria-pressed="false">Терапия</button>
-      <button class="chip" type="button" data-filter="kids" aria-pressed="false">Материнство и детство</button>
-      <button class="chip" type="button" data-filter="org" aria-pressed="false">Организация и качество</button>
-    </div>
-
-    <div class="egrid" id="egrid">
-      <!-- 1 -->
-      <a class="ecard" href="/doctors/anesteziologiya-i-reanimatsiya/shelukhin-daniil-aleksandrovich/" data-g="org">
-        <div class="ecard__photo"><img src="assets/experts/shelukhin-daniil-aleksandrovich.jpg" alt="Шелухин Даниил Александрович" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Анестезиология и реаниматология</span><span class="ecard__n">01</span></div>
-        <div class="ecard__name">Шелухин Даниил Александрович</div>
-        <div class="ecard__deg">к.м.н., заслуженный врач РФ</div>
+    <div class="team reveal" aria-label="Все ведущие эксперты клиники">
+      <a class="team__item" href="/doctors/anesteziologiya-i-reanimatsiya/shelukhin-daniil-aleksandrovich/">
+        <div class="team__ph"><img src="assets/experts/shelukhin-daniil-aleksandrovich.jpg" alt="Шелухин Д.А." loading="lazy"></div>
+        <div class="team__name">Шелухин Д. А.</div><div class="team__dir">Анестезиология</div>
       </a>
-      <!-- 2 -->
-      <a class="ecard" href="/doctors/" data-g="ter">
-        <div class="ecard__photo"><img src="assets/experts/obrezan-andrey-grigorevich.jpg" alt="Обрезан Андрей Григорьевич" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Кардиология</span><span class="ecard__n">02</span></div>
-        <div class="ecard__name">Обрезан Андрей Григорьевич</div>
-        <div class="ecard__deg">д.м.н., профессор</div>
+      <a class="team__item" href="/doctors/">
+        <div class="team__ph"><img src="assets/experts/obrezan-andrey-grigorevich.jpg" alt="Обрезан А.Г." loading="lazy"></div>
+        <div class="team__name">Обрезан А. Г.</div><div class="team__dir">Кардиология</div>
       </a>
-      <!-- 3 -->
-      <a class="ecard" href="/doctors/pulmonologiya/sereda-vitaliy-petrovich/" data-g="ter">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">С</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Пульмонология</span><span class="ecard__n">03</span></div>
-        <div class="ecard__name">Середа Виталий Петрович</div>
-        <div class="ecard__deg">д.м.н., доцент</div>
+      <a class="team__item" href="/doctors/pulmonologiya/sereda-vitaliy-petrovich/">
+        <div class="team__ph"><div class="mono">С</div></div>
+        <div class="team__name">Середа В. П.</div><div class="team__dir">Пульмонология</div>
       </a>
-      <!-- 4 -->
-      <a class="ecard" href="/doctors/nevrologiya/golikov-konstantin-vyacheslavovich/" data-g="ter">
-        <div class="ecard__photo"><img src="assets/experts/golikov-konstantin-vyacheslavovich.jpg" alt="Голиков Константин Вячеславович" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Неврология</span><span class="ecard__n">04</span></div>
-        <div class="ecard__name">Голиков Константин Вячеславович</div>
-        <div class="ecard__deg">врач-невролог</div>
+      <a class="team__item" href="/doctors/nevrologiya/golikov-konstantin-vyacheslavovich/">
+        <div class="team__ph"><img src="assets/experts/golikov-konstantin-vyacheslavovich.jpg" alt="Голиков К.В." loading="lazy"></div>
+        <div class="team__name">Голиков К. В.</div><div class="team__dir">Неврология</div>
       </a>
-      <!-- 5 -->
-      <a class="ecard" href="/doctors/onkologiya/rykov-ivan-vladimirovich/" data-g="onco">
-        <div class="ecard__photo"><img src="assets/experts/rykov-ivan-vladimirovich.jpg" alt="Рыков Иван Владимирович" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Онкология и химиотерапия</span><span class="ecard__n">05</span></div>
-        <div class="ecard__name">Рыков Иван Владимирович</div>
-        <div class="ecard__deg">к.м.н., врач высшей категории</div>
+      <a class="team__item" href="/doctors/onkologiya/rykov-ivan-vladimirovich/">
+        <div class="team__ph"><img src="assets/experts/rykov-ivan-vladimirovich.jpg" alt="Рыков И.В." loading="lazy"></div>
+        <div class="team__name">Рыков И. В.</div><div class="team__dir">Онкология</div>
       </a>
-      <!-- 6 -->
-      <a class="ecard" href="/doctors/onkologiya/rumyantsev-pavel-olegovich/" data-g="onco">
-        <div class="ecard__photo"><img src="assets/experts/rumyantsev-pavel-olegovich.jpg" alt="Румянцев Павел Олегович" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Радиология</span><span class="ecard__n">06</span></div>
-        <div class="ecard__name">Румянцев Павел Олегович</div>
-        <div class="ecard__deg">д.м.н.</div>
+      <a class="team__item" href="/doctors/onkologiya/rumyantsev-pavel-olegovich/">
+        <div class="team__ph"><img src="assets/experts/rumyantsev-pavel-olegovich.jpg" alt="Румянцев П.О." loading="lazy"></div>
+        <div class="team__name">Румянцев П. О.</div><div class="team__dir">Радиология</div>
       </a>
-      <!-- 7 -->
-      <a class="ecard" href="/doctors/manualnaya-terapiya/guzalov-pavel-irkinovich/" data-g="org">
-        <div class="ecard__photo"><img src="assets/experts/guzalov-pavel-irkinovich.jpg" alt="Гузалов Павел Иркинович" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Реабилитация</span><span class="ecard__n">07</span></div>
-        <div class="ecard__name">Гузалов Павел Иркинович</div>
-        <div class="ecard__deg">д.м.н., профессор</div>
+      <a class="team__item" href="/doctors/manualnaya-terapiya/guzalov-pavel-irkinovich/">
+        <div class="team__ph"><img src="assets/experts/guzalov-pavel-irkinovich.jpg" alt="Гузалов П.И." loading="lazy"></div>
+        <div class="team__name">Гузалов П. И.</div><div class="team__dir">Реабилитация</div>
       </a>
-      <!-- 8 -->
-      <a class="ecard" href="/doctors/khirurgiya/kashchenko-viktor-anatolvich/" data-g="surg">
-        <div class="ecard__photo"><img src="assets/experts/kashchenko-viktor-anatolvich.jpg" alt="Кащенко Виктор Анатольевич" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Абдоминальная хирургия</span><span class="ecard__n">08</span></div>
-        <div class="ecard__name">Кащенко Виктор Анатольевич</div>
-        <div class="ecard__deg">д.м.н., профессор</div>
+      <a class="team__item" href="/doctors/khirurgiya/kashchenko-viktor-anatolvich/">
+        <div class="team__ph"><img src="assets/experts/kashchenko-viktor-anatolvich.jpg" alt="Кащенко В.А." loading="lazy"></div>
+        <div class="team__name">Кащенко В. А.</div><div class="team__dir">Хирургия</div>
       </a>
-      <!-- 9 -->
-      <a class="ecard" href="/doctors/" data-g="surg">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">К</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Оториноларингология</span><span class="ecard__n">09</span></div>
-        <div class="ecard__name">Карпищенко Сергей Анатольевич</div>
-        <div class="ecard__deg">д.м.н., профессор</div>
+      <a class="team__item" href="/doctors/">
+        <div class="team__ph"><div class="mono">К</div></div>
+        <div class="team__name">Карпищенко С. А.</div><div class="team__dir">Оториноларингология</div>
       </a>
-      <!-- 10 -->
-      <a class="ecard" href="/doctors/akusherstvo-i-ginekologiya/bezhenar-fyedor-vitalevich/" data-g="kids">
-        <div class="ecard__photo"><img src="assets/experts/bezhenar-fyedor-vitalevich.jpg" alt="Беженарь Фёдор Витальевич" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Оперативная гинекология</span><span class="ecard__n">10</span></div>
-        <div class="ecard__name">Беженарь Фёдор Витальевич</div>
-        <div class="ecard__deg">д.м.н., профессор</div>
+      <a class="team__item" href="/doctors/akusherstvo-i-ginekologiya/bezhenar-fyedor-vitalevich/">
+        <div class="team__ph"><img src="assets/experts/bezhenar-fyedor-vitalevich.jpg" alt="Беженарь Ф.В." loading="lazy"></div>
+        <div class="team__name">Беженарь Ф. В.</div><div class="team__dir">Гинекология</div>
       </a>
-      <!-- 11 -->
-      <a class="ecard" href="/doctors/" data-g="surg">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">Ч</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Офтальмология</span><span class="ecard__n">11</span></div>
-        <div class="ecard__name">Чурашов Сергей Владимирович</div>
-        <div class="ecard__deg">д.м.н., профессор</div>
+      <a class="team__item" href="/doctors/">
+        <div class="team__ph"><div class="mono">Ч</div></div>
+        <div class="team__name">Чурашов С. В.</div><div class="team__dir">Офтальмология</div>
       </a>
-      <!-- 12 -->
-      <a class="ecard" href="/doctors/urologiya/orlov-igor-nikolaevich/" data-g="surg">
-        <div class="ecard__photo"><img src="assets/experts/orlov-igor-nikolaevich.jpg" alt="Орлов Игорь Николаевич" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Урология</span><span class="ecard__n">12</span></div>
-        <div class="ecard__name">Орлов Игорь Николаевич</div>
-        <div class="ecard__deg">к.м.н., доцент, заслуженный врач СПб</div>
+      <a class="team__item" href="/doctors/urologiya/orlov-igor-nikolaevich/">
+        <div class="team__ph"><img src="assets/experts/orlov-igor-nikolaevich.jpg" alt="Орлов И.Н." loading="lazy"></div>
+        <div class="team__name">Орлов И. Н.</div><div class="team__dir">Урология</div>
       </a>
-      <!-- 13 -->
-      <a class="ecard" href="/doctors/travmatologiya-i-ortopediya/isaev-maksim-vadimovich/" data-g="surg">
-        <div class="ecard__photo"><img src="assets/experts/isaev-maksim-vadimovich.jpg" alt="Исаев Максим Вадимович" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Травматология и ортопедия</span><span class="ecard__n">13</span></div>
-        <div class="ecard__name">Исаев Максим Вадимович</div>
-        <div class="ecard__deg">врач-травматолог-ортопед</div>
+      <a class="team__item" href="/doctors/travmatologiya-i-ortopediya/isaev-maksim-vadimovich/">
+        <div class="team__ph"><img src="assets/experts/isaev-maksim-vadimovich.jpg" alt="Исаев М.В." loading="lazy"></div>
+        <div class="team__name">Исаев М. В.</div><div class="team__dir">Травматология</div>
       </a>
-      <!-- 14 -->
-      <a class="ecard" href="/doctors/" data-g="surg">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">С</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Спортивная медицина</span><span class="ecard__n">14</span></div>
-        <div class="ecard__name">Савицкий Дмитрий Святославович</div>
-        <div class="ecard__deg">к.м.н., врач высшей категории</div>
+      <a class="team__item" href="/doctors/">
+        <div class="team__ph"><div class="mono">С</div></div>
+        <div class="team__name">Савицкий Д. С.</div><div class="team__dir">Спортивная медицина</div>
       </a>
-      <!-- 15 -->
-      <a class="ecard" href="/doctors/" data-g="surg">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">Ж</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Пластическая хирургия</span><span class="ecard__n">15</span></div>
-        <div class="ecard__name">Жигало Андрей Вячеславович</div>
-        <div class="ecard__deg">к.м.н., хирургия кисти</div>
+      <a class="team__item" href="/doctors/">
+        <div class="team__ph"><div class="mono">Ж</div></div>
+        <div class="team__name">Жигало А. В.</div><div class="team__dir">Пластическая хирургия</div>
       </a>
-      <!-- 16 -->
-      <a class="ecard" href="/doctors/stomatologiya/" data-g="surg">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">Б</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Стоматология и ЧЛХ</span><span class="ecard__n">16</span></div>
-        <div class="ecard__name">Балин Дмитрий Викторович</div>
-        <div class="ecard__deg">к.м.н., челюстно-лицевой хирург</div>
+      <a class="team__item" href="/doctors/stomatologiya/">
+        <div class="team__ph"><div class="mono">Б</div></div>
+        <div class="team__name">Балин Д. В.</div><div class="team__dir">Стоматология и ЧЛХ</div>
       </a>
-      <!-- 17 -->
-      <a class="ecard" href="/doctors/kardiokhirurgiya/osadchiy-aleksey-mikhaylovich/" data-g="surg">
-        <div class="ecard__photo"><img src="assets/experts/osadchiy-aleksey-mikhaylovich.jpg" alt="Осадчий Алексей Михайлович" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Кардиохирургия</span><span class="ecard__n">17</span></div>
-        <div class="ecard__name">Осадчий Алексей Михайлович</div>
-        <div class="ecard__deg">к.м.н.</div>
+      <a class="team__item" href="/doctors/kardiokhirurgiya/osadchiy-aleksey-mikhaylovich/">
+        <div class="team__ph"><img src="assets/experts/osadchiy-aleksey-mikhaylovich.jpg" alt="Осадчий А.М." loading="lazy"></div>
+        <div class="team__name">Осадчий А. М.</div><div class="team__dir">Кардиохирургия</div>
       </a>
-      <!-- 18 -->
-      <a class="ecard" href="/doctors/detskaya-khirurgiya/kagantsov-ilya-markovich/" data-g="kids">
-        <div class="ecard__photo"><img src="assets/experts/kagantsov-ilya-markovich.jpg" alt="Каганцов Илья Маркович" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Детская хирургия</span><span class="ecard__n">18</span></div>
-        <div class="ecard__name">Каганцов Илья Маркович</div>
-        <div class="ecard__deg">д.м.н., доцент</div>
+      <a class="team__item" href="/doctors/detskaya-khirurgiya/kagantsov-ilya-markovich/">
+        <div class="team__ph"><img src="assets/experts/kagantsov-ilya-markovich.jpg" alt="Каганцов И.М." loading="lazy"></div>
+        <div class="team__name">Каганцов И. М.</div><div class="team__dir">Детская хирургия</div>
       </a>
-      <!-- 19 -->
-      <a class="ecard" href="/doctors/endoskopiya-/vanyan-arsen-valerievich/" data-g="onco">
-        <div class="ecard__photo"><img src="assets/experts/vanyan-arsen-valerievich.jpg" alt="Ванян Арсен Валериевич" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Эндоскопия</span><span class="ecard__n">19</span></div>
-        <div class="ecard__name">Ванян Арсен Валериевич</div>
-        <div class="ecard__deg">заведующий эндоскопическим отделением</div>
+      <a class="team__item" href="/doctors/endoskopiya-/vanyan-arsen-valerievich/">
+        <div class="team__ph"><img src="assets/experts/vanyan-arsen-valerievich.jpg" alt="Ванян А.В." loading="lazy"></div>
+        <div class="team__name">Ванян А. В.</div><div class="team__dir">Эндоскопия</div>
       </a>
-      <!-- 20 -->
-      <a class="ecard" href="/doctors/diagnostika/belikova-mariya-yakovlevna/" data-g="onco">
-        <div class="ecard__photo"><img src="assets/experts/belikova-mariya-yakovlevna.jpg" alt="Беликова Мария Яковлевна" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Лучевая диагностика</span><span class="ecard__n">20</span></div>
-        <div class="ecard__name">Беликова Мария Яковлевна</div>
-        <div class="ecard__deg">д.м.н., профессор</div>
+      <a class="team__item" href="/doctors/diagnostika/belikova-mariya-yakovlevna/">
+        <div class="team__ph"><img src="assets/experts/belikova-mariya-yakovlevna.jpg" alt="Беликова М.Я." loading="lazy"></div>
+        <div class="team__name">Беликова М. Я.</div><div class="team__dir">Лучевая диагностика</div>
       </a>
-      <!-- 21 -->
-      <a class="ecard" href="/doctors/diagnostika/gutkina-oksana-gennadevna/" data-g="onco">
-        <div class="ecard__photo"><img src="assets/experts/gutkina-oksana-gennadevna.jpg" alt="Гуткина Оксана Геннадьевна" loading="lazy"></div>
-        <div class="ecard__meta"><span class="ecard__dir">Функциональная диагностика</span><span class="ecard__n">21</span></div>
-        <div class="ecard__name">Гуткина Оксана Геннадьевна</div>
-        <div class="ecard__deg">заведующая отделением</div>
+      <a class="team__item" href="/doctors/diagnostika/gutkina-oksana-gennadevna/">
+        <div class="team__ph"><img src="assets/experts/gutkina-oksana-gennadevna.jpg" alt="Гуткина О.Г." loading="lazy"></div>
+        <div class="team__name">Гуткина О. Г.</div><div class="team__dir">Функциональная диагностика</div>
       </a>
-      <!-- 22 -->
-      <a class="ecard" href="/doctors/" data-g="org">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">К</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Качество и безопасность</span><span class="ecard__n">22</span></div>
-        <div class="ecard__name">Кузьмина-Крутецкая Светлана Рэмовна</div>
-        <div class="ecard__deg">руководитель медицинского управления</div>
+      <a class="team__item" href="/doctors/">
+        <div class="team__ph"><div class="mono">К</div></div>
+        <div class="team__name">Кузьмина-Крутецкая С. Р.</div><div class="team__dir">Качество и безопасность</div>
       </a>
-      <!-- 23 -->
-      <a class="ecard" href="/doctors/" data-g="org">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">М</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Эпидемиология</span><span class="ecard__n">23</span></div>
-        <div class="ecard__name">Мироненко Ольга Васильевна</div>
-        <div class="ecard__deg">д.м.н.</div>
+      <a class="team__item" href="/doctors/">
+        <div class="team__ph"><div class="mono">М</div></div>
+        <div class="team__name">Мироненко О. В.</div><div class="team__dir">Эпидемиология</div>
       </a>
-      <!-- 24 -->
-      <a class="ecard" href="/doctors/" data-g="ter">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">А</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Клиническая фармакология</span><span class="ecard__n">24</span></div>
-        <div class="ecard__name">Амелина Анна Александровна</div>
-        <div class="ecard__deg">врач — клинический фармаколог</div>
+      <a class="team__item" href="/doctors/">
+        <div class="team__ph"><div class="mono">А</div></div>
+        <div class="team__name">Амелина А. А.</div><div class="team__dir">Клиническая фармакология</div>
       </a>
-      <!-- 25 -->
-      <a class="ecard" href="/doctors/" data-g="org">
-        <div class="ecard__photo"><div class="mono" aria-hidden="true">М</div></div>
-        <div class="ecard__meta"><span class="ecard__dir">Организация здравоохранения</span><span class="ecard__n">25</span></div>
-        <div class="ecard__name">Медведев Дмитрий Сергеевич</div>
-        <div class="ecard__deg">стратегическое развитие, «ММЦ ПРО»</div>
+      <a class="team__item" href="/doctors/">
+        <div class="team__ph"><div class="mono">М</div></div>
+        <div class="team__name">Медведев Д. С.</div><div class="team__dir">Организация здравоохранения</div>
       </a>
     </div>
 
-    <p class="experts__note">Степени и звания — по данным сайтов клиники и ГК «ММЦ» на 25.11.2026. Профили, стаж и цены приёма — в разделе <a href="/doctors/">«Врачи»</a>.</p>
+    <p class="experts__note reveal">Степени и звания — по данным сайтов клиники и ГК «ММЦ» на 25.11.2026. Профили, стаж и стоимость приёма — в разделе <a href="/doctors/">«Врачи»</a>.</p>
   </div>
 </section>
 
-<!-- ================= КОМПЛЕКС ================= -->
-<section class="section section--tint" id="complex">
+<!-- ================= ПУТЬ ПАЦИЕНТА ================= -->
+<section class="section" id="journey">
   <div class="container">
-    <div class="eyebrow reveal">Комплекс</div>
-    <h2 class="h2 reveal">Три корпуса на одной территории</h2>
-    <p class="lead reveal">Многопрофильный центр, онкологический центр и лабораторный центр связаны общей инфраструктурой: диагностика, стационар, операционный блок, реабилитация.</p>
+    <div class="eyebrow reveal">Как мы работаем</div>
+    <h2 class="h2 reveal">Пять шагов от звонка до восстановления</h2>
+    <p class="lead reveal">Команда, которая принимает решение, ведёт вас до конца. Ни один этап не уходит в другую клинику.</p>
 
-    <div class="buildings">
-      <article class="bcard reveal">
-        <div class="bcard__m">112 000 м²</div>
-        <h3>Многопрофильный медицинский центр</h3>
-        <ul>
-          <li>14 операционных в оперблоке, включая гибридные</li>
-          <li>286 палат, 420 коек, 13 коек дневного стационара</li>
-          <li>Эндоскопия с ICG-навигацией: 3D, 4K, NIR</li>
-          <li>Центр персонифицированной медицины</li>
-        </ul>
-      </article>
-      <article class="bcard reveal">
-        <div class="bcard__m">13 000 м²</div>
-        <h3>Онкологический центр</h3>
-        <ul>
-          <li>27 кресел для амбулаторной химиотерапии</li>
-          <li>Радиотерапия и радионуклидная диагностика</li>
-          <li>Кабинет онкологических консилиумов</li>
-          <li>7 кабинетов узких специалистов</li>
-        </ul>
-      </article>
-      <article class="bcard reveal">
-        <div class="bcard__m">7 000 м²</div>
-        <h3>Лабораторный центр</h3>
-        <ul>
-          <li>Лабораторный комплекс 3-го уровня</li>
-          <li>Биохимия, иммунология, коагулология, цитология</li>
-          <li>Морфология и молекулярная генетика</li>
-          <li>Цифровая патоморфология</li>
-        </ul>
-      </article>
-    </div>
-
-    <div class="acc reveal">
-      <details>
-        <summary>Схема комплекса и как добраться</summary>
-        <div class="acc__body">
-          Комплекс расположен на границе Санкт-Петербурга и Ленинградской области, 188632, Всеволожский район, Юкковское сельское поселение, территория «Клиника «Белоостров». Собственный автопарк скорой помощи и вертолётная площадка для санавиации.
-        </div>
-      </details>
-      <details>
-        <summary>Правила парковки</summary>
-        <div class="acc__body">
-          Основная зона — за территорией комплекса, вдоль периметра. Въезд на территорию — по заявке, согласованной через контакт-центр: для маломобильных пациентов, пациентов по направлению «Онкология», с детьми до 7 лет и на плановую круглосуточную госпитализацию.
-          <ul>
-            <li>Сообщите ФИО, телефон и номер автомобиля при записи или накануне визита.</li>
-            <li>Телефон контакт-центра: +7 (812) 760-56-32.</li>
-          </ul>
-        </div>
-      </details>
-      <details>
-        <summary>Приём по ОМС, ДМС и платно</summary>
-        <div class="acc__body">
-          Клиника принимает пациентов на платной основе, по полисам ОМС и ДМС. Уточнить условия по вашему полису можно в контакт-центре.
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="section" id="booking" style="padding-top:0">
-  <div class="container">
-    <div class="cta reveal">
-      <div>
-        <h2>Записаться на приём или задать вопрос</h2>
-        <p>Контакт-центр работает ежедневно. Подберём специалиста, проверим условия по ОМС и ДМС, согласуем парковку и госпитализацию.</p>
+    <div class="journey">
+      <div class="step reveal">
+        <span class="step__n">01</span>
+        <h3>Заявка</h3>
+        <p>Звонок или форма на сайте. Подбираем специалиста, время и проверяем условия по ОМС и ДМС.</p>
       </div>
-      <div class="cta__box">
-        <div class="t">Контакт-центр</div>
-        <a class="cta__tel" href="tel:+78127605632">+7 (812) 760-56-32</a>
-        <a class="cta__tel" href="tel:+78126303003">+7 (812) 630-30-03</a>
+      <div class="step reveal">
+        <span class="step__n">02</span>
+        <h3>Консультация и обследование</h3>
+        <p>Осмотр, снимки и анализы. Диагностика и лаборатория на месте, без поездок по городу.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__n">03</span>
+        <h3>Консилиум и план</h3>
+        <p>Профильные эксперты согласуют тактику: что делаем, в какие сроки и сколько это стоит.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__n">04</span>
+        <h3>Лечение</h3>
+        <p>Операция в одной из 14 операционных, лекарственная или лучевая терапия по согласованному плану.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__n">05</span>
+        <h3>Восстановление</h3>
+        <p>Реабилитация и наблюдение в клинике, без перевода в другое учреждение.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= СЛУЧАИ ================= -->
+<section class="section section--tint" id="cases">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow reveal">Клинические случаи</div>
+        <h2 class="h2 reveal">Что уже сделано</h2>
+        <p class="lead reveal">Три случая из практики клиники: с диагнозом, ходом операции и результатом.</p>
+      </div>
+      <a class="sec-head__link reveal" href="/experience/">Все случаи →</a>
+    </div>
+
+    <div class="cases">
+      <a class="case reveal" href="/experience/kardiokhirurgiya_operacii/torakoskopicheskaya-plastika-mitralnogo-klapana/">
+        <div class="case__tag">Кардиохирургия</div>
+        <h3>Пластика митрального клапана на роботе da Vinci Xi</h3>
+        <p>Тяжёлая митральная недостаточность. Клапан восстановлен через разрез 3 см, грудную клетку не вскрывали. Первый такой случай в Петербурге.</p>
+        <span class="scen__link">Читать случай →</span>
+      </a>
+      <a class="case reveal" href="/experience/neyrokhirurgiya/udalenie-gigantskoy-vnutricherepnoy-opukholi-u-podrostka/">
+        <div class="case__tag">Нейрохирургия</div>
+        <h3>Удаление гигантской внутричерепной опухоли у подростка</h3>
+        <p>Случай, где размер новообразования и возраст пациента не оставляли права на ошибку.</p>
+        <span class="scen__link">Читать случай →</span>
+      </a>
+      <a class="case reveal" href="/experience/travmatologiya/odnomomentnoe-endoprotezirovanie-pravogo-kolennogo-i-levogo-tazobedrennogo-sustavov/">
+        <div class="case__tag">Травматология</div>
+        <h3>Одномоментное эндопротезирование коленного и тазобедренного суставов</h3>
+        <p>Два сустава за одну операцию: меньше наркозов, короче восстановление.</p>
+        <span class="scen__link">Читать случай →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= УСЛОВИЯ ================= -->
+<section class="section" id="terms">
+  <div class="container">
+    <div class="eyebrow reveal">Условия</div>
+    <h2 class="h2 reveal">Оплата, документы, дорога</h2>
+
+    <div class="terms">
+      <div class="term reveal">
+        <h3>Оплата и документы</h3>
+        <ul>
+          <li>Приём по ОМС, ДМС и платно. Условия по вашему полису уточнит контакт-центр.</li>
+          <li>Стоимость приёма указана в карточке каждого врача.</li>
+          <li>На первый приём возьмите паспорт, полис, снимки и результаты анализов.</li>
+        </ul>
+      </div>
+      <div class="term reveal">
+        <h3>Дорога и парковка</h3>
+        <ul>
+          <li>Комплекс на границе Санкт-Петербурга и Ленинградской области: 188632, Всеволожский район, Юкковское поселение.</li>
+          <li>Парковка на территории по заявке через контакт-центр.</li>
+          <li>Для пациентов из регионов работает вертолётная площадка для санавиации.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section section--tint" id="faq">
+  <div class="container">
+    <div class="eyebrow reveal">Вопросы</div>
+    <h2 class="h2 reveal">Что чаще всего спрашивают</h2>
+
+    <div class="acc reveal" style="margin-top:34px">
+      <details open>
+        <summary>Можно ли лечиться по ОМС или ДМС?</summary>
+        <div class="acc__body">Да. Клиника принимает пациентов на платной основе, по полисам ОМС и ДМС. Условия по вашему полису уточнит контакт-центр до записи.</div>
+      </details>
+      <details>
+        <summary>Сколько стоит приём и лечение?</summary>
+        <div class="acc__body">Стоимость приёма указана в карточке конкретного врача. Стоимость лечения обсуждается на консультации и фиксируется в плане до начала, после диагностики и консилиума.</div>
+      </details>
+      <details>
+        <summary>Нужно ли направление от врача?</summary>
+        <div class="acc__body">Нет, записаться можно самостоятельно. Если у вас уже есть снимки, анализы и выписки, возьмите их: это сократит путь до решения.</div>
+      </details>
+      <details>
+        <summary>Можно ли приехать из другого региона?</summary>
+        <div class="acc__body">Да. У комплекса есть вертолётная площадка для санавиации и собственный автопарк скорой помощи, стационар на 420 коек. Контакт-центр помогает с госпитализацией и парковкой.</div>
+      </details>
+      <details>
+        <summary>Есть ли детское отделение?</summary>
+        <div class="acc__body">Да, в стационаре 286 палат для взрослых и детей, работает детская хирургия и педиатрия. Приём проходит с сопровождением родителя.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT BAND ================= -->
+<section class="cta-band" id="booking">
+  <div class="container cta-band__in">
+    <div class="cta-band__left reveal">
+      <div class="cta-band__eyebrow">Запись</div>
+      <h2>Записаться на приём</h2>
+      <p>Контакт-центр работает ежедневно: подберём специалиста, проверим условия по ОМС и ДМС, согласуем парковку и госпитализацию.</p>
+    </div>
+    <div class="cta-band__right reveal">
+      <div class="cta-band__label">Контакт-центр</div>
+      <a class="cta-band__tel" href="tel:+78127605632">+7 (812) 760-56-32</a>
+      <a class="cta-band__tel cta-band__tel--small" href="tel:+78126303003">+7 (812) 630-30-03</a>
+      <div class="cta-band__actions">
         <a class="btn" href="/">Онлайн-запись</a>
-        <div class="cta__note">Или оставьте заявку — перезвоним</div>
+        <span class="cta-band__note">или оставьте заявку — перезвоним</span>
       </div>
     </div>
   </div>
